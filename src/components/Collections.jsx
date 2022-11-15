@@ -3,6 +3,11 @@ import "../App.css";
 export default function Collections() {
   return (
     <div className="min-content" id="ro">
+      <div>
+      <a href="./App">
+      <button className="closebutton">x Close</button>
+      </a>
+      </div>
       <div className="min-content-wrapper">
         <div className="border">
           <div className="border">

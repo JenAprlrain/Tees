@@ -17,6 +17,9 @@ import Rare from "./components/Rare";
 import Mynftees from "./components/Nftees";
 import Team from "./components/Team";
 import Partners from "./components/Partners";
+import { ethers } from "ethers";
+import React, { useState } from 'react';
+
 
 const HandleCollections = () => {
   let subContainerTitle = document.getElementById("sub-container-title");
@@ -67,7 +70,41 @@ const HandlePartners = () => {
   partnersPage.style.display = "block";
 };
 
+
 function App() {
+  const [walletAddress, setWalletAddress] = useState("");
+
+  // Requests access to the user's META MASK WALLET
+  // https://metamask.io
+  async function requestAccount() {
+    console.log('Requesting account...');
+
+    // ❌ Check if Meta Mask Extension exists 
+    if(window.ethereum) {
+      console.log('detected');
+
+      try {
+        const accounts = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        setWalletAddress(accounts[0]);
+      } catch (error) {
+        console.log('Error connecting...');
+      }
+
+    } else {
+      alert('Meta Mask not detected');
+    }
+  }
+
+  // Create a provider to interact with a smart contract
+  async function connectWallet() {
+    if(typeof window.ethereum !== 'undefined') {
+      await requestAccount();
+
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+    }
+  }
   return (
     <div className="container">
       <div className="hero">
@@ -110,12 +147,10 @@ function App() {
           </a>
         </div>
         <div className="connect-highlight">
-          <a href="#">
-            <img src={connect} alt="" />
-          </a>
+        <button onClick={requestAccount}><img src={connect} alt=""/></button>
         </div>
         <div className="medium-highlight">
-          <a href="#">
+          <a href="https://officialnftees.medium.com/" target="_blank">
             <img src={medium} alt="" />
           </a>
         </div>
@@ -125,12 +160,12 @@ function App() {
           </a>
         </div>
         <div className="twitter-highlight">
-          <a href="#">
+          <a href="https://twitter.com/OfficialNFTees" target="_blank">
             <img src={twitter} alt="" />
           </a>
         </div>
         <div className="twitch-highlight">
-          <a href="#">
+          <a href="https://discord.com/invite/EkKahYya9g" target="_blank">
             <img src={twitch} alt="" />
           </a>
         </div>
@@ -165,5 +200,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

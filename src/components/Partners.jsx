@@ -6,6 +6,12 @@ import partner2 from "../data/tees-partners.jpeg";
 export default function Partners() {
   return (
     <div className="min-content partners-list">
+      <div>
+      <a href="./App">
+      <button className="closebutton">x Close</button>
+      </a>
+      </div>
+      <br />
       <div className="border">
         <div className="border">
           <div className="border">

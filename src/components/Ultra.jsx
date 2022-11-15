@@ -3,6 +3,11 @@ import "../App.css";
 export default function Ultra() {
   return (
     <div className="min-content ultra-exclusive">
+      <div>
+      <a href="./App">
+      <button className="closebutton">x Close</button>
+      </a>
+      </div>
       <div className="box">
         <div className="sub-box"> </div>
         <p className="box-details">
