@@ -1,0 +1,371 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: url(/src/data/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 60rem;
+}
+.sub-container {
+  height: 38.3rem;
+  min-width: 60rem;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+.min-container {
+  height: 34.4rem;
+  min-width: 55.44rem;
+  position: absolute;
+  background-color: rgb(0, 0, 0, 0.5);
+}
+.sub-container-title {
+  display: flex !important;
+  align-self: baseline !important;
+}
+.sub-container-title p {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 34px;
+  margin-top: -0.25em;
+  text-shadow: 6px 0px 3px rgba(0, 0, 0, 0.4);
+  color: white;
+}
+.hero {
+  margin: auto;
+  width: 60rem;
+}
+.hero img {
+  width: 60rem;
+}
+
+.content {
+  position: absolute;
+  /* opacity: 100%; */
+  min-width: 60rem;
+  max-width: 60rem;
+  height: 39rem;
+}
+.collections-highlight {
+  margin-top: 10.8em;
+  margin-left: 4.9em;
+  opacity: 0;
+  width: min-content;
+}
+.collections-highlight img {
+  width: 12rem;
+}
+.collections-highlight:hover {
+  opacity: 100%;
+}
+.team-highlight {
+  margin-top: -3.3em;
+  margin-left: 19.1em;
+  opacity: 0;
+  width: min-content;
+}
+.team-highlight img {
+  width: 4.7rem;
+}
+.team-highlight:hover {
+  opacity: 100%;
+}
+.tees-highlight {
+  margin-top: -2.5em;
+  margin-left: 25.22em;
+  opacity: 0;
+  width: min-content;
+}
+.tees-highlight img {
+  width: 8.5rem;
+}
+.tees-highlight:hover {
+  opacity: 100%;
+}
+.rare-highlight {
+  width: min-content;
+  margin-left: 32.1em;
+  margin-top: 8.2em;
+  opacity: 0;
+}
+.rare-highlight img {
+  width: 5rem;
+}
+.rare-highlight:hover {
+  opacity: 100%;
+}
+.ultra-highlight {
+  width: min-content;
+  opacity: 0;
+  margin-left: 23.1em;
+  margin-top: -2em;
+}
+.ultra-highlight img {
+  width: 7rem;
+}
+.ultra-highlight:hover {
+  opacity: 100%;
+}
+.nftees-highlight {
+  width: min-content;
+  opacity: 0;
+  margin-left: 36.5em;
+  margin-top: -17.8em;
+}
+.nftees-highlight img {
+  width: 2.6rem;
+}
+.nftees-highlight:hover {
+  opacity: 100%;
+}
+.partners-highlight {
+  width: min-content;
+  opacity: 0;
+  margin-left: 41.1em;
+  margin-top: -2.7em;
+}
+.partners-highlight img {
+  width: 13.5rem;
+}
+.partners-highlight:hover {
+  opacity: 100%;
+}
+.connect-highlight {
+  width: min-content;
+  margin-left: 22.1em;
+  margin-top: -15.4em;
+  opacity: 0;
+}
+.connect-highlight img {
+  width: 16rem;
+}
+.connect-highlight:hover {
+  opacity: 100%;
+}
+.medium-highlight {
+  width: min-content;
+  margin-left: 50.55em;
+  margin-top: 0.9em;
+  opacity: 0;
+}
+.medium-highlight img {
+  width: 1.5rem;
+}
+.medium-highlight:hover {
+  opacity: 100%;
+}
+.twitter-highlight {
+  width: min-content;
+  margin-left: 52.2em;
+  margin-top: -2em;
+  opacity: 0;
+}
+.twitter-highlight img {
+  width: 1.5rem;
+}
+.twitter-highlight:hover {
+  opacity: 100%;
+}
+.twitch-highlight {
+  width: min-content;
+  margin-left: 54.4em;
+  margin-top: -3em;
+  opacity: 0;
+}
+.twitch-highlight img {
+  width: 1.8rem;
+}
+.twitch-highlight:hover {
+  opacity: 100%;
+}
+.t-highlight {
+  width: min-content;
+  margin-top: -3.8em;
+  margin-left: 3.9em;
+  opacity: 0;
+}
+.t-highlight img {
+  width: 1.9rem;
+}
+.t-highlight:hover {
+  opacity: 100%;
+}
+.min-content {
+  opacity: 100% !important;
+  color: white;
+  max-width: 55rem;
+}
+.min-content-wrapper {
+  padding: 10px;
+  padding-left: 75px;
+}
+
+/* COLLECTIONS PAGE */
+.collections-heading {
+  border: 1px solid white;
+  outline: 1px solid white;
+  padding: 0 10px 0.5px 10px;
+  width: max-content;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+  border-radius: 15px;
+  text-decoration: none;
+  color: white;
+}
+.border {
+  border: 1px solid white;
+  width: max-content;
+  padding: 0 6px;
+  border-radius: 15px;
+}
+.border-1 {
+  border: 1px solid white;
+  width: max-content;
+  padding: 0 10px;
+  border-radius: 25px;
+}
+.learn-more-btn {
+  margin-left: 35em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.learn-more {
+  font-size: 18px;
+  padding: 0 25px;
+}
+.ultra-exclusive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5em;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  width: 27rem;
+  background-color: white;
+  border-radius: 20px;
+  height: 27rem;
+  padding: 0 5px;
+}
+.sub-box {
+  margin: 0 auto;
+  width: 20rem;
+  background-color: #aaa;
+  color: black;
+  height: 20rem;
+  border-radius: 20px;
+}
+.box-title {
+  color: black;
+  font-size: 22 !important;
+  font-weight: bold;
+  font-style: italic;
+}
+.box-details {
+  color: black;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 5px 0;
+}
+.mynftees {
+  display: flex;
+  justify-content: center;
+  margin-top: 15rem;
+}
+.open-closet {
+  border: 1px solid white;
+  padding: 0 75px 0.5px 75px;
+  width: max-content;
+  font-size: 22px;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+  border-radius: 15px;
+  color: white;
+}
+.team-members {
+  display: flex;
+  justify-content: center;
+  margin-top: 8rem;
+}
+.team-member {
+  background-color: white;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+.partners-list {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center;
+}
+.uman-partner {
+  border: 1px solid white;
+  padding: 0 50px;
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+}
+.partner-list-2 {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+}
+.partner-list-1 img {
+  width: 750px;
+}
+.partner-list-2 img {
+  width: 200px;
+}
+.crokky {
+  margin-left: 100px;
+}
+.tees-partner {
+  margin-right: 10px;
+}
+.bottom-btns {
+  display: flex;
+  flex-direction: row;
+  width: 45rem;
+  justify-content: space-between;
+}
+.tees-partner-btn {
+  border: 1px solid white;
+  padding: 0 10px;
+  border-radius: 25px;
+  font-size: 22px;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+}
+#partners-page,
+#team-page,
+#mynftees-page,
+#rare-page,
+#collections-page,
+#ultra-page {
+  display: none;
+}
