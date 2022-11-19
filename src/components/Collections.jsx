@@ -13,16 +13,17 @@ export default function Collections() {
           <div className="border">
             <div className="border">
               <a href="#collection1" className="collections-heading">
-                collection 1
+                Royal TEES Collection
               </a>
             </div>
           </div>
         </div>
         <p className="colllctions-details">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error earum
-          dolores accusamus eum esse deleniti expedita quaerat cum, pariatur
-          vitae unde hic tenetur provident eveniet cumque id recusandae quos
-          corporis.
+        Our Genesis 100 OG NFTee Collection was our first, launching on ZooCoin NFT Marketplace 
+        in April of 2021, and subsequently migrating to Paintswap. These NFTees are focused on 
+        celebrating the Fantom Ecosystem. Each holder earns royalties earned by the contract 
+        from primary and secondary sales, and subsequent collections will also funnel royaltees
+        to holders of these 100 NFTees.
         </p>
         <div className="learn-more-btn">
           <div className="border">
@@ -42,16 +43,16 @@ export default function Collections() {
           <div className="border">
             <div className="border">
               <a href="#collection1" className="collections-heading">
-                collection 2
+                CommuniTee Collection
               </a>
             </div>
           </div>
         </div>
         <p className="colllctions-details">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error earum
-          dolores accusamus eum esse deleniti expedita quaerat cum, pariatur
-          vitae unde hic tenetur provident eveniet cumque id recusandae quos
-          corporis.
+        The CommuniTee Collection pays homage to the OG 8-bit NFT projects on Fantom as well 
+        as several OG protocols and influencers within the the Fantom community. This collection 
+        recognizes that the 100 OF NFTees are not accessible to all members of the community, 
+        and seeks to grow our engagement. This contract will earn Royaltees for 100 OG NFTee holders
         </p>
         <div className="learn-more-btn">
           <div className="border">
@@ -71,16 +72,15 @@ export default function Collections() {
           <div className="border">
             <div className="border">
               <a href="#collection1" className="collections-heading">
-                collection 3
+                Lifestyle Collection
               </a>
             </div>
           </div>
         </div>
         <p className="colllctions-details">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error earum
-          dolores accusamus eum esse deleniti expedita quaerat cum, pariatur
-          vitae unde hic tenetur provident eveniet cumque id recusandae quos
-          corporis.
+          This collection features incredibly customized and unique collaborations with artists,
+          pushing the boundries of artistic mediums and canvases and exploring the idea of
+          "what a physical NFT can be."
         </p>
         <div className="learn-more-btn">
           <div className="border">
@@ -96,36 +96,8 @@ export default function Collections() {
             </div>
           </div>
         </div>
-        <div className="border">
-          <div className="border">
-            <div className="border">
-              <a href="#collection1" className="collections-heading">
-                collection 4
-              </a>
-            </div>
-          </div>
-        </div>
-        <p className="colllctions-details">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error earum
-          dolores accusamus eum esse deleniti expedita quaerat cum, pariatur
-          vitae unde hic tenetur provident eveniet cumque id recusandae quos
-          corporis.
-        </p>
-        <div className="learn-more-btn">
-          <div className="border">
-            <div className="border">
-              <div className="border">
-                <a
-                  href="#collection1"
-                  className="collections-heading learn-more"
-                >
-                  Learn more
-                </a>
+        
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }

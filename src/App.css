@@ -259,10 +259,10 @@ body {
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  width: 27rem;
+  width: 30rem;
   background-color: white;
   border-radius: 20px;
-  height: 27rem;
+  height: 30rem;
   padding: 0 5px;
 }
 .sub-box {
@@ -270,7 +270,7 @@ body {
   width: 20rem;
   background-color: #aaa;
   color: black;
-  height: 20rem;
+  height: 24rem;
   border-radius: 20px;
 }
 .box-title {
@@ -385,4 +385,5 @@ button:focus {
   color: white;
   border: 2px solid white;
   padding: 3px 3px;
+  float:right
 }
