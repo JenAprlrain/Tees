@@ -11,12 +11,16 @@ export default function Ultra() {
       </a>
       </div>
       <div className="box">
+      <p className="box-title">THE UMAN JACKET</p>
         <div className="sub-box">
        <img src={jacket} alt="jacket" width={"100%"} height={"100%"}/></div>
         <p className="box-details">
-          Uman Jacket was created for blah blah blah...
+        This jacket was the masterpiece of the 11-NFTEE collab with acclaimed multi-chain artist, UMAN.
+The canvas itself is a yves saint laurent jean jacket. Tees tags were affixed to the arm and
+back of the jacket by officialnftees, and the uman pictured above was painted on by
+the artist. The piece went up for auction on paintswap on OCT 31st, 2021 , and sold for 
+8,500 FTM  (~$24,395 USD value at time of sale).
         </p>
-        <p className="box-title">Uman Jacket</p>
       </div>
     </div>
   );

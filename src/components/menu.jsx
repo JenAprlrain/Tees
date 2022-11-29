@@ -1,6 +1,7 @@
 import "../App.css";
+import React from "react"
 
-export default function Collections() {
+export default function Partners() {
   return (
     <div className="min-content partners-list">
       <div>
@@ -12,29 +13,34 @@ export default function Collections() {
       <div className="border">
         <div className="border">
           <div className="border">
-            <a href="#RoyalTees">
-            <p className="uman-partner">RoyalTees Collection</p></a>
+          <a href="#whatistees">
+            <p className="uman-partner">What is Tees?</p>
+            </a>
           </div>
-        </div>
-      </div>
-      <br />
-        <div className="border">
-          <div className="border">
-            <div className="border">
-            <a href="#CommuniTees">
-              <p className="uman-partner">CommuniTees Collection</p></a>
-            </div>
         </div>
         </div>
         <br />
+        <br />
+        <div className="border">
         <div className="border">
           <div className="border">
-            <div className="border">
-            <a href="#LifeStyle">
-              <p className="uman-partner">Lifestyle Collection</p></a>
-            </div>
+          <a href="#Technology">
+            <p className="uman-partner">Technology</p>
+            </a>
           </div>
         </div>
-      </div>
+        </div>
+        <br />
+        <br />
+        <div className="border">
+        <div className="border">
+          <div className="border">
+          <a href="#Chains">
+            <p className="uman-partner">Chains</p>
+            </a>
+          </div>
+        </div>
+        </div>
+    </div>
   );
 }

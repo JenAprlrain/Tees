@@ -11,8 +11,9 @@ export default function Nftees() {
       <div className="border-1">
         <div className="border-1">
           <div className="border-1">
-            <p className="open-closet">open closet</p>
+            <p className="open-closet">Open Wardrobe</p>
           </div>
+          <div className="textcenter"><h3>🚧Temporarily down for maintenance🚧</h3></div>
         </div>
       </div>
     </div>

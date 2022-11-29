@@ -10,6 +10,7 @@ export default function Rare() {
       </a>
       </div>
       <div className="box">
+      <p className="box-title">Hedera Christmas Sweater</p>
         <div className="sub-box"> 
         <img src={sweater} alt="Hbar Sweater" width={"100%"} height={"100%"}/></div>
         <p className="box-details">
@@ -18,7 +19,6 @@ export default function Rare() {
           owner of the NFT. Please check to see if your NFT has been claimed for a physical before
           buying on secondary markets. ...add link to NFTiers here...
         </p>
-        <p className="box-title">Hedera Christmas Sweater</p>
       </div>
       </div>
   );

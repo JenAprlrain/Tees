@@ -17,9 +17,10 @@ import Rare from "./components/Rare";
 import Mynftees from "./components/Nftees";
 import Team from "./components/Team";
 import Partners from "./components/Partners";
+import Menu from "./components/menu";
 import { ethers } from "ethers";
 import React, { useState } from 'react';
-
+import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
 
 const HandleCollections = () => {
   let subContainerTitle = document.getElementById("sub-container-title");
@@ -31,7 +32,7 @@ const HandleCollections = () => {
 };
 const HandleUltra = () => {
   let subContainerTitle = document.getElementById("sub-container-title");
-  subContainerTitle.innerHTML = "utltra exclusive";
+  subContainerTitle.innerHTML = "ultra exclusive";
   let subContainer = document.getElementById("sub-container");
   subContainer.style.zIndex = "1";
   let ultraPage = document.getElementById("ultra-page");
@@ -69,7 +70,14 @@ const HandlePartners = () => {
   let partnersPage = document.getElementById("partners-page");
   partnersPage.style.display = "block";
 };
-
+const Handlemenu = () => {
+  let subContainerTitle = document.getElementById("sub-container-title");
+  subContainerTitle.innerHTML = "menu";
+  let subContainer = document.getElementById("sub-container");
+  subContainer.style.zIndex = "1";
+  let menuPage = document.getElementById("menu-page");
+  menuPage.style.display = "block";
+};
 
 function App() {
   const [walletAddress, setWalletAddress] = useState("");
@@ -122,7 +130,7 @@ function App() {
           </a>
         </div>
         <div className="tees-highlight">
-          <a href="#">
+          <a href="#Tees">
             <img src={tees} alt="" />
           </a>
         </div>
@@ -150,22 +158,22 @@ function App() {
         <button onClick={requestAccount}><img src={connect} alt=""/></button>
         </div>
         <div className="medium-highlight">
-          <a href="https://officialnftees.medium.com/" target="_blank">
+          <a href="https://officialnftees.medium.com/" target="_blank" rel="noreferrer">
             <img src={medium} alt="" />
           </a>
         </div>
         <div className="t-highlight">
-          <a href="#">
+          <a href="#menu" onClick={Handlemenu}>
             <img src={tLogo} alt="" />
           </a>
         </div>
         <div className="twitter-highlight">
-          <a href="https://twitter.com/OfficialNFTees" target="_blank">
+          <a href="https://twitter.com/OfficialNFTees" target="_blank" rel="noreferrer">
             <img src={twitter} alt="" />
           </a>
         </div>
         <div className="twitch-highlight">
-          <a href="https://discord.com/invite/EkKahYya9g" target="_blank">
+          <a href="https://discord.com/invite/EkKahYya9g" target="_blank" rel="noreferrer">
             <img src={twitch} alt="" />
           </a>
         </div>
@@ -193,6 +201,9 @@ function App() {
             </div>
             <div id="partners-page">
               <Partners />
+            </div>
+            <div id="menu-page">
+              <Menu />
             </div>
           </div>
         </div>
