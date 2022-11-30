@@ -12,8 +12,10 @@ export default function Ultra() {
       </div>
       <div className="box">
       <p className="box-title">THE UMAN JACKET</p>
+      <br />
         <div className="sub-box">
        <img src={jacket} alt="jacket" width={"100%"} height={"100%"}/></div>
+       <br />
         <p className="box-details">
         This jacket was the masterpiece of the 11-NFTEE collab with acclaimed multi-chain artist, UMAN.
 The canvas itself is a yves saint laurent jean jacket. Tees tags were affixed to the arm and

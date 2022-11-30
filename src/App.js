@@ -19,8 +19,8 @@ import Team from "./components/Team";
 import Partners from "./components/Partners";
 import Menu from "./components/menu";
 import { ethers } from "ethers";
-import React, { useState } from 'react';
-import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import Modal from './components/Modal/Modal';
 
 const HandleCollections = () => {
   let subContainerTitle = document.getElementById("sub-container-title");
@@ -72,7 +72,7 @@ const HandlePartners = () => {
 };
 const Handlemenu = () => {
   let subContainerTitle = document.getElementById("sub-container-title");
-  subContainerTitle.innerHTML = "menu";
+  subContainerTitle.innerHTML = "About TEES";
   let subContainer = document.getElementById("sub-container");
   subContainer.style.zIndex = "1";
   let menuPage = document.getElementById("menu-page");
@@ -82,12 +82,39 @@ const Handlemenu = () => {
 function App() {
   const [walletAddress, setWalletAddress] = useState("");
 
+  const [isWhatIsTeesModalOpen, setIsWhatIsTeesModalOpen] = useState("");
+  const [isTechnologyModalOpen, setIsTechnologyModalOpen] = useState("");
+
+const WhatIsTeesModal = () => {
+if (isWhatIsTeesModalOpen == true){
+const title = <div className="containername">What Is NFTees?</div>
+const content = (
+    <>
+      <div> Body content</div>
+    </>
+  );
+
+return (
+    <Modal
+      isOpen={isWhatIsTeesModalOpen}
+      onClose={() => setIsWhatIsTeesModalOpen(false)}
+      title={title}
+      content={content}
+    />
+  )
+
+function SetModalWhatIsTees(){
+  useEffect(() => setIsWhatIsTeesModalOpen(false), [])
+    }
+  }
+}
+
   // Requests access to the user's META MASK WALLET
   // https://metamask.io
   async function requestAccount() {
     console.log('Requesting account...');
 
-    // ❌ Check if Meta Mask Extension exists 
+    // ❌ Check if Meta Mask Extension exists
     if(window.ethereum) {
       console.log('detected');
 

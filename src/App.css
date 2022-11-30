@@ -6,8 +6,7 @@ body {
   background: url(/src/data/background.png);
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Aller Italic"
 }
 .container {
   height: 100vh;
@@ -259,7 +258,7 @@ body {
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  width: 30rem;
+  width: 40rem;
   background-color: white;
   border-radius: 20px;
   height: 30rem;
@@ -267,22 +266,22 @@ body {
 }
 .sub-box {
   margin: 0 auto;
-  width: 16rem;
+  width: 14rem;
   background-color: #aaa;
   color: black;
-  height: 20rem;
+  height: 18rem;
   border-radius: 20px;
 }
 .box-title {
   color: black;
-  font-size: 22 !important;
+  font-size: 40 !important;
   font-weight: bold;
-  font-style: italic;
+
 }
 .box-details {
   color: black;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   margin: 5px 0;
 }
 .mynftees {
@@ -328,6 +327,16 @@ body {
   font-weight: bold;
   font-style: italic;
   text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+.clokky-worky {
+  color: white;
+  text-decoration: none;
+}
+.teens-on-acid {
+  color: white;
+  text-decoration: none;
 }
 .partner-list-2 {
   margin: 10px 0;
@@ -361,14 +370,158 @@ body {
   font-style: italic;
   text-transform: uppercase;
 }
+.collections-details {
+  line-height: 1;
+}
+.team-members-c2 {
+  display: flex;
+}
+.collection-three-wrapper,
+.collection-two-wrapper {
+  padding: 0 50px;
+}
+.collection-two-btn {
+  margin: 10px 0px 25px 75px;
+}
+.mb {
+  margin-bottom: 10px;
+}
+.team-members-c3 {
+  display: flex;
+}
+.c3-product-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.c3-product-1 img {
+  width: 90%;
+  border-radius: 10px;
+}
+.c3-product {
+  display: flex;
+  flex-direction: column !important;
+}
+.c3-product-detail,
+.c3-product-title {
+  display: none;
+}
+.c3-product:hover {
+  width: 425px;
+  height: 425px;
+  position: absolute;
+  margin-top: -150px;
+  margin-left: 195px;
+}
+.partners-uman {
+  padding: 25px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.partners-uman-details {
+  line-height: 1;
+}
+.partners-ending-title {
+  font-size: 26px;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-top: 6.5em;
+}
+.lh-1 {
+  line-height: 1;
+}
+.partners-teens {
+  display: flex;
+  align-items: center;
+}
+.partners-teens-wrapper {
+  padding: 25px;
+}
+.ml-5 {
+  margin-left: 5em;
+}
+.mb-2 {
+  margin-bottom: 2em;
+}
+.clokky-worky-page {
+  display: flex;
+  align-items: center;
+  padding: 25px;
+}
+#clokky-worky-page,
+#teenson-acid-page,
+#partners-uman-page,
+#collection-three-page,
+#collection-two-page,
 #partners-page,
 #team-page,
 #mynftees-page,
 #rare-page,
 #collections-page,
+#ultra-page,
 #menu-page,
-#ultra-page {
+#uman-page {
   display: none;
+}
+@media (max-width: 600px) {
+  body {
+    background-size: cover;
+    height: 120vh !important;
+    overflow: hidden !important;
+  }
+  .hero {
+    min-width: 25rem;
+    max-width: 25rem;
+  }
+  .hero img {
+    width: 25rem;
+  }
+  .content {
+    zoom: 42.5%;
+    min-width: 59.9rem;
+    max-width: 59.9rem;
+  }
+  .min-container,
+  .sub-container {
+    min-width: 23.1rem;
+    max-width: 23.1rem;
+    height: 14.3rem;
+  }
+  .container {
+    min-width: 25rem;
+    max-width: 25rem;
+  }
+  .min-content-wrapper {
+    min-width: 60rem;
+    max-width: 60rem;
+    margin: 0 auto;
+    zoom: 35%;
+  }
+  .min-content {
+    min-width: 25rem;
+    max-width: 25rem;
+    zoom: 60%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    /* margin: 0 auto; */
+    margin: 0 auto;
+  }
+  .collection-two-wrapper,
+  .collection-three-wrapper {
+    zoom: 35%;
+    width: 60rem;
+  }
+  ._collections_page {
+    zoom: 260%;
+  }
+}
+
+a:link {
+  color: white;
+   text-decoration: none;
 }
 button {
   border: none;
@@ -392,9 +545,21 @@ button:focus {
 .textcenter {
   text-align: center;
 }
+.textleft {
+  text-align: left;
+}
 a {
   color: #FFF;
 }
 a:hover {
    color: white
+}
+.button2 {
+  position: inherit;
+  padding: 5px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  color: black;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
 }

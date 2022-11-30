@@ -17,7 +17,10 @@ export default function Rare() {
           Hedera Christmas Sweater is a exclusive collection done in collaboration with the Hedera
           foundation, Nfteir, and Potluck Protocol. Physical sweaters can be claimed only once by an
           owner of the NFT. Please check to see if your NFT has been claimed for a physical before
-          buying on secondary markets. ...add link to NFTiers here...
+          buying on secondary markets.
+          <br />
+          <br />
+          <div>...add link to NFTiers here...</div>
         </p>
       </div>
       </div>
