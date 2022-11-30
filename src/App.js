@@ -19,8 +19,9 @@ import Team from "./components/Team";
 import Partners from "./components/Partners";
 import Menu from "./components/menu";
 import { ethers } from "ethers";
-import React, { useState, useEffect } from 'react';
+import React, { useState,} from 'react';
 import Modal from './components/Modal/Modal';
+import video from "./data/Tees.mp4";
 
 const HandleCollections = () => {
   let subContainerTitle = document.getElementById("sub-container-title");
@@ -82,32 +83,32 @@ const Handlemenu = () => {
 function App() {
   const [walletAddress, setWalletAddress] = useState("");
 
-  const [isWhatIsTeesModalOpen, setIsWhatIsTeesModalOpen] = useState("");
-  const [isTechnologyModalOpen, setIsTechnologyModalOpen] = useState("");
+  const [isTeesModalOpen, setTeesModalOpen] = useState("");
 
-const WhatIsTeesModal = () => {
-if (isWhatIsTeesModalOpen == true){
-const title = <div className="containername">What Is NFTees?</div>
-const content = (
-    <>
-      <div> Body content</div>
-    </>
-  );
 
-return (
-    <Modal
-      isOpen={isWhatIsTeesModalOpen}
-      onClose={() => setIsWhatIsTeesModalOpen(false)}
-      title={title}
-      content={content}
-    />
-  )
-
-function SetModalWhatIsTees(){
-  useEffect(() => setIsWhatIsTeesModalOpen(false), [])
+const TeesModal = () => {
+  if (isTeesModalOpen === true){
+  const title = <div className="containername">Tees Videos</div>
+  const content = (
+      <>
+        <div className="min-content partners-list">
+      <div>
+      <video src={video} width="400" height="375" controls></video>
+      </div>
+    </div>
+      </>
+    );
+  
+  return (
+      <Modal
+        isOpen={isTeesModalOpen}
+        onClose={() => setTeesModalOpen(false)}
+        title={title}
+        content={content}
+      />
+      )
     }
   }
-}
 
   // Requests access to the user's META MASK WALLET
   // https://metamask.io
@@ -156,8 +157,9 @@ function SetModalWhatIsTees(){
             <img src={team} alt="" />
           </a>
         </div>
+        {TeesModal()}
         <div className="tees-highlight">
-          <a href="#Tees">
+          <a href="#Tees" onClick={() => setTeesModalOpen(true)}>
             <img src={tees} alt="" />
           </a>
         </div>
