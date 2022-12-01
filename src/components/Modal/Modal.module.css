@@ -22,6 +22,7 @@
   color: black;
   font-weight: bold;
   font-size: xx-large;
+  font-family: "Aller Bold Italic";
 }
 
 .body {
@@ -31,11 +32,12 @@
   color: black;
   font-weight: bold;
   font-size: large;
+  font-family: "Aller Bold Italic";
 }
 
 .footer {
   position: inherit;
-   text-align: center;
+  text-align: center;
   padding: 10px;
 
 }
@@ -47,7 +49,12 @@
   border: 1px solid black;
   border-radius: 8px;
   color: black;
+<<<<<<< HEAD
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+=======
+  font-family: "Aller Bold Italic";
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+>>>>>>> 04865ea (added the custom font)
 }
 
 .footerCloseButton:hover{

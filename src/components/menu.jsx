@@ -9,6 +9,8 @@ import Hbar from "../data/hederaLogo.jpg";
 import Avax from "../data/avax.png";
 import polygon from "../data/polygon.png";
 import shimmer from "../data/shimmer.png";
+import video from "../data/Tees.mp4";
+
 export default function Menu() {
 
   const [WhatIsTeesModalOpen, setWhatIsTeesModalOpen] = useState(false)
@@ -20,9 +22,8 @@ export default function Menu() {
      const title = <div>What is TEES?<br/></div>
      const content = (
        <>
-       <br />
         <div>
-        <img src={RedLogo} alt="Logo" width={"30%"} height={"auto"}/>
+        <video src={video} width="275" height="275" controls></video>
         </div>
         <br />
          <div>Tees is a leading web 3 digital fashion brand that seeks to offer secure, premium threads
@@ -67,10 +68,10 @@ export default function Menu() {
             <br />
             <br />
             Series 1 Technology – through partnership with Authentic Vision, a world leader in 
-            authentication labels, and their Meta Anchor ™ technology, OfficialNFTees has added a 
+            authentication labels, and their Meta Anchor technology, OfficialNFTees has added a 
             layer of security to our physicals. Meta Anchors are a serialized, 1/1 holographic QR 
             labels that are not replicable, even by the machines that created them. This technology 
-            adds a layer of verification of authenticity the precedes the proof of ownership over the 
+            adds a layer of verification of authenticity that precedes the proof of ownership over the 
             NFTee in the Web3 Wardrobe ™. 
             <br />
             <br />
@@ -95,6 +96,7 @@ export default function Menu() {
       const content = (
         <>
         <br />
+        <br />
         <div className= "row">
           <div className= "column2">
         <a href="https://www.fantom.foundation/" target="_blank" rel="noreferrer">
@@ -110,22 +112,18 @@ export default function Menu() {
             We have launched on Fantom and Hedera Hashgraph 
           </div>
           <br />
+          <br />
           <div>
             The team continues to explore opportunities and plan launches on the following 
             chains at this time
          </div>
          <br />
-         <div>
-         <a href="https://www.avax.network/" target="_blank" rel="noreferrer">
-        <img src={Avax} alt="Logo" width={"5%"} height={"auto"}/></a>Avalanche
-         </div>
          <br />
          <div>
+         <a href="https://www.avax.network/" target="_blank" rel="noreferrer">
+        <img src={Avax} alt="Logo" width={"5%"} height={"auto"}/></a>Avalanche &nbsp;&nbsp;&nbsp;
          <a href="https://polygon.technology/" target="_blank" rel="noreferrer">
-        <img src={polygon} alt="Logo" width={"5%"} height={"auto"}/></a>Polygon
-        </div>
-        <br />
-        <div>
+        <img src={polygon} alt="Logo" width={"5%"} height={"auto"}/></a>Polygon &nbsp;&nbsp;&nbsp;
         <a href="https://polygon.technology/" target="_blank" rel="noreferrer">
          <img src={shimmer} alt="Logo" width={"5%"} height={"auto"}/></a>Shimmer
          </div>

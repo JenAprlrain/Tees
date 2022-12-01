@@ -5,6 +5,7 @@ import "./App.css";
 
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import "./fonts/Aller_BdIt.ttf";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

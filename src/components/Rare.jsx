@@ -1,5 +1,6 @@
 import "../App.css";
-import sweater from "../data/HbarSweater.gif" 
+import "./Modal/Modal.module.css"
+import sweater from "../data/HbarSweater.gif";
 
 export default function Rare() {
   return (
@@ -20,7 +21,9 @@ export default function Rare() {
           buying on secondary markets.
           <br />
           <br />
-          <div>...add link to NFTiers here...</div>
+          <a href="https://nftier.tech/mint/hedera-holiday" target="_blank" rel="noreferrer">
+         <button className= "button2">Mint Page</button>
+         </a>
         </p>
       </div>
       </div>
