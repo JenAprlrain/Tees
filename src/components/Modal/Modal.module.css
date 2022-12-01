@@ -1,7 +1,7 @@
 .modal {
-  width: 48%;
-  height: 60%;
-  position: fixed;
+  height: 32.4rem;
+  width: 54.4rem;
+  position: absolute;
   top: 18%;
   left: 26%;
   z-index: 999;
@@ -18,7 +18,7 @@
 .title {
   color: black;
   font-weight: bold;
-  font-size: 2vw;
+  font-size: xx-large;
 }
 
 .body {
@@ -27,7 +27,7 @@
   padding-right: 4%;
   color: black;
   font-weight: bold;
-  font-size: 1vw;
+  font-size: large;
 }
 
 .footer {
