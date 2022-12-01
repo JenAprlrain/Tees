@@ -1,7 +1,6 @@
 import "../App.css";
 import React, { useState } from "react";
 import Modal from '../components/Modal/Modal';
-import RedLogo from "../data/Red_Logo.png";
 import AuthVision from "../data/AuthenticVision.jpg";
 import QR from "../data/QR.png";
 import Fantom from "../data/fantomlogo.png";
@@ -9,7 +8,7 @@ import Hbar from "../data/hederaLogo.jpg";
 import Avax from "../data/avax.png";
 import polygon from "../data/polygon.png";
 import shimmer from "../data/shimmer.png";
-import video from "../data/Tees.mp4";
+import video from "../data/Tees.mov";
 
 export default function Menu() {
 
@@ -23,7 +22,7 @@ export default function Menu() {
      const content = (
        <>
         <div>
-        <video src={video} width="275" height="275" controls></video>
+        <video src={video} width="700" height="400" controls></video>
         </div>
         <br />
          <div>Tees is a leading web 3 digital fashion brand that seeks to offer secure, premium threads
