@@ -9,7 +9,7 @@ body {
   font-family: "Aller Bold Italic"
 }
 .container {
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -466,7 +466,7 @@ body {
 #uman-page {
   display: none;
 }
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   body {
     background-size: cover;
     height: 120vh !important;
