@@ -88,7 +88,7 @@ function App() {
 
 const TeesModal = () => {
   if (isTeesModalOpen === true){
-  const title = <div className="containername">Tees Videos</div>
+  const title = <div className="containername"></div>
   const content = (
       <>
       <img src={comingsoon} alt="Logo" width={"25%"} height={"auto"}/>
