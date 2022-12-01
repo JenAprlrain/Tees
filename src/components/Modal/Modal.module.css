@@ -44,9 +44,80 @@
   border: 1px solid black;
   border-radius: 8px;
   color: black;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 .footerCloseButton:hover{
   background: white;
+}
+
+@media screen and (max-width: 980px) {
+  .footer {
+    position: absolute;
+    left: 20px;
+    width: 110vw;
+}
+  .footer-img{
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    height: 100px;
+}
+
+  .content{
+    display: static;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    min-height: 100vh;
+    min-width: 120vw;
+  }
+
+}
+
+@media (max-width: 928px) {
+  .modal {
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 18%;
+    left: 0%;
+    z-index: 999;
+    background: white;
+    border-radius: 8px;
+  }
+
+  .title {
+     font-size: .8em;
+     text-align: center;
+      color: black;
+  }
+
+  .body {
+    text-align: center;
+    padding-left:  4%;
+    padding-right: 4%;
+    color: black;
+    font-weight: bold;
+    font-size: .8em;
+  }
+
+  .footer {
+    position: absolute;
+    top: auto;
+    text-align: center;
+    padding: 10px;
+
+  }
+
+  .footerCloseButton {
+    position: absolute;
+    left: 40%;
+    background: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    color: black;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  }
 }
