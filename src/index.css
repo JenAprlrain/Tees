@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@font-face {
+  font-family: "Aller Bold Italic";
+  src: local("AllerBoldItalic"),
+   url("./fonts/Aller_BdIt.ttf") format("truetype");
+  font-weight: bold;
+  }
