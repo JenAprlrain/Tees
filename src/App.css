@@ -6,7 +6,7 @@ body {
   background: url(/src/data/background.png);
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: "Aller Italic"
+  font-family: "Aller Bold Italic"
 }
 .container {
   height: 100vh;
