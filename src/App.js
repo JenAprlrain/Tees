@@ -21,7 +21,7 @@ import Menu from "./components/menu";
 import { ethers } from "ethers";
 import React, { useState,} from 'react';
 import Modal from './components/Modal/Modal';
-import video from "./data/Tees.mp4";
+import comingsoon from "./data/comingsoon.jpg";
 
 const HandleCollections = () => {
   let subContainerTitle = document.getElementById("sub-container-title");
@@ -91,11 +91,18 @@ const TeesModal = () => {
   const title = <div className="containername">Tees Videos</div>
   const content = (
       <>
-        <div className="min-content partners-list">
+      <img src={comingsoon} alt="Logo" width={"25%"} height={"auto"}/>
+      <br />
+      <br />
       <div>
-      <video src={video} width="400" height="375" controls></video>
+      <h2>TEES BRAND VIDEO DROPPING DEC. 5</h2>
       </div>
-    </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       </>
     );
   
