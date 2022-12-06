@@ -95,7 +95,7 @@ const TeesModal = () => {
       <br />
       <br />
       <div>
-      <h2>TEES BRAND VIDEO DROPPING DEC. 5</h2>
+      <h2>TEES BRAND VIDEO DROPPING Dec 2022</h2>
       </div>
       <br />
       <br />
