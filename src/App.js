@@ -88,6 +88,7 @@ function App() {
   const [walletAddress, setWalletAddress] = useState("");
 
   const [isTeesModalOpen, setTeesModalOpen] = useState("");
+  const [isMenuModalOpen, setMenuModalOpen] = useState("");
 
 
 const TeesModal = () => {
@@ -120,6 +121,36 @@ const TeesModal = () => {
       )
     }
   }
+
+  const MenuModal = () => {
+    if (isMenuModalOpen === true){
+    const title = <div className="containername"></div>
+    const content = (
+        <>
+        <br />
+        <p>What is Tees?</p>
+        <br />
+        <br />
+        <p>Technology</p>
+        <br />
+        <br />
+        <p>Chains</p>
+        <br />
+        <br />
+        </>
+      );
+
+    return (
+        <Modal
+          isOpen={isMenuModalOpen}
+          onClose={() => setMenuModalOpen(false)}
+          title={title}
+          content={content}
+        />
+        )
+      }
+    }
+
 
   // Requests access to the user's META MASK WALLET
   // https://metamask.io
@@ -262,8 +293,9 @@ const TeesModal = () => {
       <div className="mobilecontent">
         <img src={mobile_background} alt="" />
         {TeesModal()}
+        {MenuModal()}
           <div className="mobile-button-container">
-              <div className="mobile-button">
+              <div className="mobile-button" role="button" onClick={() => setMenuModalOpen(true)}>
               About</div>
               <div className="mobile-button">Team</div>
               <div className="mobile-button">Ultra</div>
