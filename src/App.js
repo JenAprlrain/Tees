@@ -299,7 +299,7 @@ const TeesModal = () => {
                const content = (
                  <>
                   <div>
-                  <video src={video} width="300"" controls></video>
+                  <video src={video} width="300" controls></video>
                   </div>
                   <br />
                    <div>Tees is a web 3 digital fashion brand that seeks to offer secure, premium threads
