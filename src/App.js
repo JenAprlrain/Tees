@@ -1,6 +1,13 @@
 import container from "./data/container.png";
 import collections from "./data/collections.png";
 import jacket from "./data/umanjacket.jpg"
+import AuthVision from "./data/AuthenticVision.jpg";
+import QR from "./data/QR.png";
+import Fantom from "./data/fantomlogo.png";
+import Hbar from "./data/hederaLogo.jpg";
+import Avax from "./data/avax.png";
+import polygon from "./data/polygon.png";
+import shimmer from "./data/shimmer.png";
 import video from "./data/Tees.mov";
 import mobile_background from "./data/mobile_background.png";
 import connect from "./data/connect.png";
@@ -142,7 +149,7 @@ const TeesModal = () => {
         <div role="button" onClick={() => (setWhatIsTeesModalOpen(true), setMenuModalOpen(false))}>What is Tees?</div>
         <br />
         <br />
-        <p>Technology</p>
+          <div role="button" onClick={() => (setIsTechnologyModalOpen(true), setMenuModalOpen(false))}>Technology</div>
         <br />
         <br />
         <p>Chains</p>
@@ -323,6 +330,49 @@ const TeesModal = () => {
                   )
                 }
               }
+              const TechnologyModal = () => {
+                if (IsTechnologyModalOpen === true){
+                const title = <div>Technology<br/></div>
+                const content = (
+                  <>
+                  <div className= "row">
+                    <div className= "column2">
+                  <a href="https://www.authenticvision.com/" target="_blank" rel="noreferrer">
+                  <img src={AuthVision} alt="Logo" width={"25%"} height={"auto"}/></a>
+                  </div>
+                  <div className= "column2">
+                  <img src={QR} alt="Logo" width={"25%"} height={"auto"}/>
+                   </div>
+                   </div>
+                    <div><span font-size=".5rem">Base Web 3 Technology – From the beginning, OfficialNFTees has utilized QR codes to
+                      enhance the experience of owning one of our NFTs and physical replicas (the combination of
+                      which is often referred to as Phygitals). With the addition of our Web 3 Wardrobe ™, users
+                      can prove ownership of their NFTs through a simple QR scan.
+                      <br />
+                      <br />
+                      Series 1 Technology – through partnership with Authentic Vision, a world leader in
+                      authentication labels, and their Meta Anchor technology, OfficialNFTees has added a
+                      layer of security to our physicals. Meta Anchors are a serialized, 1/1 holographic QR
+                      labels that are not replicable, even by the machines that created them. This technology
+                      adds a layer of verification of authenticity that precedes the proof of ownership over the
+                      NFTee in the Web3 Wardrobe ™.</span>
+                      <br />
+                      <br />
+                      </div>
+                  </>
+                );
+
+
+            return (
+                  <Modal
+                    isOpen={IsTechnologyModalOpen}
+                    onClose={() => (setIsTechnologyModalOpen(false), setMenuModalOpen(true))}
+                    title={title}
+                    content={content}
+                  />
+                   )
+                 }
+               }
 
 
   // Requests access to the user's META MASK WALLET
@@ -472,6 +522,7 @@ const TeesModal = () => {
         {PartnersModal()}
         {SocialsModal()}
         {WhatIsTeesModal()}
+        {TechnologyModal()}
                   <div className="mobile-button-container">
               <div className="mobile-button" role="button" onClick={() => setMenuModalOpen(true)}>About</div>
               <div className="mobile-button" role="button" onClick={() => setCollectionModalOpen(true)}>Collections</div>
