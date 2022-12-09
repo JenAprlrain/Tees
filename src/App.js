@@ -149,10 +149,10 @@ const TeesModal = () => {
         <div role="button" onClick={() => (setWhatIsTeesModalOpen(true), setMenuModalOpen(false))}>What is Tees?</div>
         <br />
         <br />
-          <div role="button" onClick={() => (setIsTechnologyModalOpen(true), setMenuModalOpen(false))}>Technology</div>
+        <div role="button" onClick={() => (setIsTechnologyModalOpen(true), setMenuModalOpen(false))}>Technology</div>
         <br />
         <br />
-        <p>Chains</p>
+        <div role="button" onClick={() => (setChainsModalOpen(true), setMenuModalOpen(false))}>Chains</div>
         <br />
         <br />
         </>
@@ -309,11 +309,11 @@ const TeesModal = () => {
                   <video src={video} width="300" controls></video>
                   </div>
                   <br />
-                   <div>Tees is a web 3 digital fashion brand that seeks to offer secure, premium threads
+                   <div><span className="smalltext">Tees is a web 3 digital fashion brand that seeks to offer secure, premium threads
                      to our technology and fashion-focused community, elevating collectability. We offer
                      engagement through our drop-style events that feature both partners and TEES-branded
                      apparel, all of which is meticulously designed and printed with the highest quality
-                     materials available.
+                     materials available.</span>
                      </div>
                      <br />
                  </>
@@ -330,6 +330,7 @@ const TeesModal = () => {
                   )
                 }
               }
+
               const TechnologyModal = () => {
                 if (IsTechnologyModalOpen === true){
                 const title = <div>Technology<br/></div>
@@ -344,7 +345,7 @@ const TeesModal = () => {
                   <img src={QR} alt="Logo" width={"25%"} height={"auto"}/>
                    </div>
                    </div>
-                    <div><span font-size=".5rem">Base Web 3 Technology – From the beginning, OfficialNFTees has utilized QR codes to
+                    <div><span className="smalltext">Base Web 3 Technology – From the beginning, OfficialNFTees has utilized QR codes to
                       enhance the experience of owning one of our NFTs and physical replicas (the combination of
                       which is often referred to as Phygitals). With the addition of our Web 3 Wardrobe ™, users
                       can prove ownership of their NFTs through a simple QR scan.
@@ -367,6 +368,60 @@ const TeesModal = () => {
                   <Modal
                     isOpen={IsTechnologyModalOpen}
                     onClose={() => (setIsTechnologyModalOpen(false), setMenuModalOpen(true))}
+                    title={title}
+                    content={content}
+                  />
+                   )
+                 }
+               }
+
+
+               const ChainsModal = () => {
+                if (ChainsModalOpen === true){
+                const title = <div>Chains<br/></div>
+                const content = (
+                  <>
+                  <br />
+                  <br />
+                  <div className= "row">
+                    <div className= "column2">
+                  <a href="https://www.fantom.foundation/" target="_blank" rel="noreferrer">
+                  <img src={Fantom} alt="Logo" width={"45%"} height={"auto"}/></a>
+                  </div>
+                  <div className= "column2">
+                  <a href="https://hedera.com//" target="_blank" rel="noreferrer">
+                  <img src={Hbar} alt="Logo" width={"48%"} height={"auto"}/></a>
+                   </div>
+                   </div>
+                   <br />
+                    <div>
+                      We have launched on Fantom and Hedera Hashgraph
+                    </div>
+                    <br />
+                    <br />
+                    <div>
+                      The team continues to explore opportunities and plan launches on the following
+                      chains at this time
+                   </div>
+                   <br />
+                   <br />
+                   <div>
+                   <a href="https://www.avax.network/" target="_blank" rel="noreferrer">
+                  <img src={Avax} alt="Logo" width={"5%"} height={"auto"}/></a>Avalanche &nbsp;&nbsp;&nbsp;
+                   <a href="https://polygon.technology/" target="_blank" rel="noreferrer">
+                  <img src={polygon} alt="Logo" width={"5%"} height={"auto"}/></a>Polygon &nbsp;&nbsp;&nbsp;
+                  <a href="https://polygon.technology/" target="_blank" rel="noreferrer">
+                   <img src={shimmer} alt="Logo" width={"5%"} height={"auto"}/></a>Shimmer
+                   </div>
+                   <br />
+                  </>
+                );
+
+
+            return (
+                  <Modal
+                    isOpen={ChainsModalOpen}
+                    onClose={() => setChainsModalOpen(false)}
                     title={title}
                     content={content}
                   />
@@ -523,6 +578,7 @@ const TeesModal = () => {
         {SocialsModal()}
         {WhatIsTeesModal()}
         {TechnologyModal()}
+        {ChainsModal()}
                   <div className="mobile-button-container">
               <div className="mobile-button" role="button" onClick={() => setMenuModalOpen(true)}>About</div>
               <div className="mobile-button" role="button" onClick={() => setCollectionModalOpen(true)}>Collections</div>

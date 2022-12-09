@@ -563,4 +563,8 @@ body {
     color: white;
   }
 
+.smalltext{
+  font-size: .7rem;
+}
+
 }
