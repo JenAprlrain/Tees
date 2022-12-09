@@ -89,6 +89,8 @@ function App() {
 
   const [isTeesModalOpen, setTeesModalOpen] = useState("");
   const [isMenuModalOpen, setMenuModalOpen] = useState("");
+  const [isCollectionModalOpen, setCollectionModalOpen] = useState("");
+  const [isTeamModalOpen, setTeamModalOpen] = useState("");
 
 
 const TeesModal = () => {
@@ -150,6 +152,64 @@ const TeesModal = () => {
         )
       }
     }
+
+    const CollectionModal = () => {
+      if (isCollectionModalOpen === true){
+      const title = <div className="containername"></div>
+      const content = (
+          <>
+          <br />
+          <p>ROYALTEES Collection</p>
+          <br />
+          <br />
+          <p>COMMUNITEES Collection</p>
+          <br />
+          <br />
+          <p>LIFESTYLE Collection</p>
+          <br />
+          <br />
+          </>
+        );
+
+      return (
+          <Modal
+            isOpen={isCollectionModalOpen}
+            onClose={() => setCollectionModalOpen(false)}
+            title={title}
+            content={content}
+          />
+          )
+        }
+      }
+
+      const TeamModal = () => {
+        if (isTeamModalOpen === true){
+        const title = <div className="containername"></div>
+        const content = (
+            <>
+            <br />
+            <p>ROYALTEES Collection</p>
+            <br />
+            <br />
+            <p>COMMUNITEES Collection</p>
+            <br />
+            <br />
+            <p>LIFESTYLE Collection</p>
+            <br />
+            <br />
+            </>
+          );
+
+        return (
+            <Modal
+              isOpen={isTeamModalOpen}
+              onClose={() => setTeamModalOpen(false)}
+              title={title}
+              content={content}
+            />
+            )
+          }
+        }
 
 
   // Requests access to the user's META MASK WALLET
@@ -294,10 +354,10 @@ const TeesModal = () => {
         <img src={mobile_background} alt="" />
         {TeesModal()}
         {MenuModal()}
-          <div className="mobile-button-container">
-              <div className="mobile-button" role="button" onClick={() => setMenuModalOpen(true)}>
-              About</div>
-              <div className="mobile-button">Team</div>
+        {CollectionModal()}
+                  <div className="mobile-button-container">
+              <div className="mobile-button" role="button" onClick={() => setMenuModalOpen(true)}>About</div>
+              <div className="mobile-button" role="button" onClick={() => setCollectionModalOpen(true)}>Collections</div>
               <div className="mobile-button">Ultra</div>
               <div className="mobile-button">Rare</div>
               <div className="mobile-button">Partners</div>
