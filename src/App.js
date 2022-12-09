@@ -264,8 +264,7 @@ const TeesModal = () => {
         {TeesModal()}
           <div className="mobile-button-container">
               <div className="mobile-button">
-              <a href="#Tees" onClick={() => setTeesModalOpen(true)}>
-              About</a></div>
+              About</div>
               <div className="mobile-button">Team</div>
               <div className="mobile-button">Ultra</div>
               <div className="mobile-button">Rare</div>
