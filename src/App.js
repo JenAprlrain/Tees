@@ -421,7 +421,7 @@ const TeesModal = () => {
             return (
                   <Modal
                     isOpen={ChainsModalOpen}
-                    onClose={() => setChainsModalOpen(false)}
+                    onClose={() => (setChainsModalOpen(false), setMenuModalOpen(true))}
                     title={title}
                     content={content}
                   />
