@@ -262,6 +262,14 @@ const TeesModal = () => {
       <div className="mobilecontent">
         <img src={mobile_background} alt="" />
         {TeesModal()}
+          <div className="mobile-button-container">
+              <div className="mobile-button">About</div>
+              <div className="mobile-button">Team</div>
+              <div className="mobile-button">Ultra</div>
+              <div className="mobile-button">Rare</div>
+              <div className="mobile-button">Partners</div>
+              <div className="mobile-button">Socials</div>
+          </div>
       </div>
       </div>
       </MediaQuery>

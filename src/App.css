@@ -478,23 +478,59 @@ body {
 .mobilewrapper{
   width:95%;
   margin: 0 auto;
+  display: flex;
 }
 
 .mobilecontent{
   width:100%;
   margin: 0 auto;
-
+  align-items: center;
+  justify-content: center;
 }
 
 .mobilecontent img{
-  display: block;
-  width: 75%;
-  margin: 0 auto;
+  width: 90%;
+  position: fixed;
+  left: 5%;
+  right: 5%;
+  align-items: center;
+  justify-content: center;
 }
 
-.mobilebutton{
-  
+.mobile-button-container{
+  position: fixed;
+  left: 5%;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
+
+.mobile-button {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+
+.mobile-button:disabled {
+  cursor: not-allowed;
+}
+
+.mobile-button:hover{
+  background: linear-gradient(315deg, #008000 0%, #7CFC00 74%);
+  color: black;
+}
+
+.mobile-button:active{
+  background: black;
+  color: green;
+}
+
 @media (max-width: 649px) {
   body {
     background: url(/src/data/background.png);
