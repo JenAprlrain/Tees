@@ -542,6 +542,7 @@ body {
 
   a:link {
     text-decoration: none;
+    color: white;
   }
 
   /* visited link */
@@ -553,11 +554,13 @@ body {
   /* mouse over link */
   a:hover {
     text-decoration: none;
+    color: white;
   }
 
   /* selected link */
   a:active {
     text-decoration: none;
+    color: white;
   }
 
 }
