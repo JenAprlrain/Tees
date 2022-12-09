@@ -1,5 +1,6 @@
 import container from "./data/container.png";
 import collections from "./data/collections.png";
+import mobile_background from "./data/mobile_background.png";
 import connect from "./data/connect.png";
 import nftees from "./data/nftees.png";
 import partners from "./data/partners.png";
@@ -22,6 +23,9 @@ import { ethers } from "ethers";
 import React, { useState,} from 'react';
 import Modal from './components/Modal/Modal';
 import comingsoon from "./data/comingsoon.jpg";
+import MediaQuery from 'react-responsive';
+
+
 
 const HandleCollections = () => {
   let subContainerTitle = document.getElementById("sub-container-title");
@@ -105,7 +109,7 @@ const TeesModal = () => {
       <br />
       </>
     );
-  
+
   return (
       <Modal
         isOpen={isTeesModalOpen}
@@ -148,8 +152,13 @@ const TeesModal = () => {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
     }
   }
+
+
   return (
+    <div className="parent">
+            <MediaQuery query="(min-device-width: 650px)">
     <div className="container">
+
       <div className="hero">
         <img src={container} alt="" />
       </div>
@@ -244,7 +253,21 @@ const TeesModal = () => {
           </div>
         </div>
       </div>
+            </div>
+      </MediaQuery>
+
+      <div className="mobilemain">
+      <MediaQuery query="(max-device-width: 649px)">
+      <div className="mobilewrapper">
+      <div className="mobilecontent">
+        <img src={mobile_background} alt="" />
+        {TeesModal()}
+      </div>
+      </div>
+      </MediaQuery>
+      </div>
     </div>
+
   );
 }
 export default App;

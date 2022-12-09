@@ -470,247 +470,36 @@ body {
 #uman-page {
   display: none;
 }
-@media (max-width: 480px) {
+
+.mobilemain {
+
+}
+
+.mobilewrapper{
+  width:95%;
+  margin: 0 auto;
+}
+
+.mobilecontent{
+  width:100%;
+  margin: 0 auto;
+
+}
+
+.mobilecontent img{
+  display: block;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.mobilebutton{
+  
+}
+@media (max-width: 649px) {
   body {
-    background-size: cover;
-    height: 120vh !important;
-    overflow: hidden !important;
+    background: url(/src/data/background.png);
+    background-repeat: no-repeat;
+    background-size: 200%;
+    font-family: "Aller Bold Italic"
   }
-  .hero {
-    min-width: 25rem;
-    max-width: 25rem;
-  }
-  .hero img {
-    width: 25rem;
-  }
-
-  .content {
-  zoom: 42.5%;
-  min-width: 59.9rem;
-  max-width: 59.9rem;
-}
-
-  .min-container,
-  .sub-container {
-    min-width: 23.1rem;
-    max-width: 23.1rem;
-    height: 14.3rem;
-  }
-  .container {
-    min-width: 25rem;
-    max-width: 25rem;
-  }
-  .min-content-wrapper {
-    min-width: 60rem;
-    max-width: 60rem;
-    margin: 0 auto;
-    zoom: 35%;
-  }
-  .min-content {
-    min-width: 25rem;
-    max-width: 25rem;
-    zoom: 60%;
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    /* margin: 0 auto; */
-    margin: 0 auto;
-  }
-  .collection-two-wrapper,
-  .collection-three-wrapper {
-    zoom: 35%;
-    width: 60rem;
-  }
-  ._collections_page {
-    zoom: 260%;
-  }
-
-
-.team-highlight {
-  margin-top: -1.5em;
-  margin-left: 25.4em;
-  opacity: 0;
-}
-.team-highlight img {
-  width: 1.9rem;
-}
-.team-highlight:hover {
-  opacity: 100%;
-}
-.tees-highlight {
-  margin-top: -1.3em;
-  margin-left: 27.9em;
-  opacity: 0;
-  width: min-content;
-}
-.tees-highlight img {
-  width: 3.6rem;
-}
-.tees-highlight:hover {
-  opacity: 100%;
-}
-.rare-highlight {
-  width: min-content;
-  margin-left: 30.8em;
-  margin-top: 3.2em;
-  opacity: 0;
-}
-.rare-highlight img {
-  width: 2.3rem;
-}
-.rare-highlight:hover {
-  opacity: 100%;
-}
-.ultra-highlight {
-  width: min-content;
-  opacity: 0;
-  margin-left: 27.1em;
-  margin-top: -1.1em;
-}
-.ultra-highlight img {
-  width: 3rem;
-}
-.ultra-highlight:hover {
-  opacity: 100%;
-}
-.nftees-highlight {
-  width: min-content;
-  opacity: 0;
-  margin-left: 32.7em;
-  margin-top: -8em;
-}
-.nftees-highlight img {
-  width: 1rem;
-}
-.nftees-highlight:hover {
-  opacity: 100%;
-}
-.partners-highlight {
-  width: min-content;
-  opacity: 0;
-  margin-left: 34.7em;
-  margin-top: -1.2em;
-}
-.partners-highlight img {
-  width: 5.5rem;
-}
-.partners-highlight:hover {
-  opacity: 100%;
-}
-.connect-highlight {
-  width: min-content;
-  margin-left: 26.6em;
-  margin-top: -6.7em;
-  opacity: 0;
-}
-.connect-highlight img {
-  width: 6.7rem;
-}
-.connect-highlight:hover {
-  opacity: 100%;
-}
-.medium-highlight {
-  width: min-content;
-  margin-left: 38.4em;
-  margin-top: 0em;
-  opacity: 0;
-}
-.medium-highlight img {
-  width: .8em;
-}
-.medium-highlight:hover {
-  opacity: 100%;
-}
-.twitter-highlight {
-  width: min-content;
-  margin-left: 39.2em;
-  margin-top: -1.4em;
-  opacity: 0;
-}
-.twitter-highlight img {
-  width: .7rem;
-}
-.twitter-highlight:hover {
-  opacity: 100%;
-}
-.twitch-highlight {
-  width: min-content;
-  margin-left: 40em;
-  margin-top: -1.5em;
-  opacity: 0;
-}
-.twitch-highlight img {
-  width: .8rem;
-}
-.twitch-highlight:hover {
-  opacity: 100%;
-}
-.t-highlight {
-  width: min-content;
-  margin-top: -1.8em;
-  margin-left: 19em;
-  opacity: 0;
-}
-.t-highlight img {
-  width: .8em;
-}
-.t-highlight:hover {
-  opacity: 100%;
-}
-.collections-highlight {
-  margin-top: 15.7em;
-  margin-left: 19.3em;
-  opacity: 0;
-  width: min-content;
-}
-.collections-highlight img {
-  width: 5.2em;
-}
-.collections-highlight:hover {
-  opacity: 100%;
-}
-
-a:link {
-  color: white;
-   text-decoration: none;
-}
-button {
-  border: none;
-  background-color: transparent;
-  outline: none;
-  cursor: pointer;
-}
-button:focus {
-  border: none;
-}
-.closebutton {
-  background-color: transparent;
-  cursor:pointer;
-  color: white;
-  border: 2px solid white;
-  padding: 3px 3px;
-  float:right
-}
-
-.textcenter {
-  text-align: center;
-}
-.textleft {
-  text-align: left;
-}
-a {
-  color: #FFF;
-}
-a:hover {
-   color: white
-}
-.button2 {
-  position: inherit;
-  padding: 5px;
-  background: white;
-  border: 1px solid black;
-  color: black;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-  font-family: "Aller Bold Italic";
-}
 }
