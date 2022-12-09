@@ -1,6 +1,7 @@
 import container from "./data/container.png";
 import collections from "./data/collections.png";
 import jacket from "./data/umanjacket.jpg"
+import video from "./data/Tees.mov";
 import mobile_background from "./data/mobile_background.png";
 import connect from "./data/connect.png";
 import nftees from "./data/nftees.png";
@@ -95,6 +96,11 @@ function App() {
   const [isPartnersModalOpen, setPartnersModalOpen] = useState("");
   const [isSocialsModalOpen, setSocialsModalOpen] = useState("");
 
+  const [WhatIsTeesModalOpen, setWhatIsTeesModalOpen] = useState(false)
+  const [IsTechnologyModalOpen, setIsTechnologyModalOpen] = useState(false)
+  const [ChainsModalOpen, setChainsModalOpen] = useState(false)
+
+
 
 const TeesModal = () => {
   if (isTeesModalOpen === true){
@@ -133,7 +139,7 @@ const TeesModal = () => {
     const content = (
         <>
         <br />
-        <p>What is Tees?</p>
+        <div role="button" onClick={() => (setWhatIsTeesModalOpen(true), setMenuModalOpen(false))}>What is Tees?</div>
         <br />
         <br />
         <p>Technology</p>
@@ -287,6 +293,38 @@ const TeesModal = () => {
             }
 
 
+            const WhatIsTeesModal = () => {
+               if (WhatIsTeesModalOpen === true){
+               const title = <div>What is TEES?<br/></div>
+               const content = (
+                 <>
+                  <div>
+                  <video src={video} width="700" height="400" controls></video>
+                  </div>
+                  <br />
+                   <div>Tees is a web 3 digital fashion brand that seeks to offer secure, premium threads
+                     to our technology and fashion-focused community, elevating collectability. We offer
+                     engagement through our drop-style events that feature both partners and TEES-branded
+                     apparel, all of which is meticulously designed and printed with the highest quality
+                     materials available.
+                     </div>
+                     <br />
+                 </>
+               );
+
+
+           return (
+                 <Modal
+                   isOpen={WhatIsTeesModalOpen}
+                   onClose={() => (setWhatIsTeesModalOpen(false), setMenuModalOpen(true))}
+                   title={title}
+                   content={content}
+                 />
+                  )
+                }
+              }
+
+
   // Requests access to the user's META MASK WALLET
   // https://metamask.io
   async function requestAccount() {
@@ -433,6 +471,7 @@ const TeesModal = () => {
         {UltraModal()}
         {PartnersModal()}
         {SocialsModal()}
+        {WhatIsTeesModal()}
                   <div className="mobile-button-container">
               <div className="mobile-button" role="button" onClick={() => setMenuModalOpen(true)}>About</div>
               <div className="mobile-button" role="button" onClick={() => setCollectionModalOpen(true)}>Collections</div>
