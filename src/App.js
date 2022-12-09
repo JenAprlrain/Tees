@@ -1,5 +1,6 @@
 import container from "./data/container.png";
 import collections from "./data/collections.png";
+import jacket from "./data/umanjacket.jpg"
 import mobile_background from "./data/mobile_background.png";
 import connect from "./data/connect.png";
 import nftees from "./data/nftees.png";
@@ -90,7 +91,7 @@ function App() {
   const [isTeesModalOpen, setTeesModalOpen] = useState("");
   const [isMenuModalOpen, setMenuModalOpen] = useState("");
   const [isCollectionModalOpen, setCollectionModalOpen] = useState("");
-  const [isTeamModalOpen, setTeamModalOpen] = useState("");
+  const [isUltraModalOpen, setUltraModalOpen] = useState("");
 
 
 const TeesModal = () => {
@@ -182,19 +183,21 @@ const TeesModal = () => {
         }
       }
 
-      const TeamModal = () => {
-        if (isTeamModalOpen === true){
+      const UltraModal = () => {
+        if (isUltraModalOpen === true){
         const title = <div className="containername"></div>
         const content = (
             <>
             <br />
-            <p>ROYALTEES Collection</p>
+            <p>The Uman Jacket</p>
             <br />
+            <img src={jacket} alt="jacket" width={"20%"}/>
             <br />
-            <p>COMMUNITEES Collection</p>
-            <br />
-            <br />
-            <p>LIFESTYLE Collection</p>
+            <p>This jacket was the masterpiece of the 11-NFTEE collab with acclaimed multi-chain artist, UMAN.
+            The canvas itself is a yves saint laurent jean jacket. Tees tags were affixed to the arm and
+            back of the jacket by officialnftees, and the uman pictured above was painted on by
+            the artist. The piece went up for auction on paintswap on OCT 31st, 2021, and sold for
+            8,500 FTM  (~$24,395 USD value at time of sale).</p>
             <br />
             <br />
             </>
@@ -202,8 +205,8 @@ const TeesModal = () => {
 
         return (
             <Modal
-              isOpen={isTeamModalOpen}
-              onClose={() => setTeamModalOpen(false)}
+              isOpen={isUltraModalOpen}
+              onClose={() => setUltraModalOpen(false)}
               title={title}
               content={content}
             />
@@ -355,11 +358,12 @@ const TeesModal = () => {
         {TeesModal()}
         {MenuModal()}
         {CollectionModal()}
+        {UltraModal()}
                   <div className="mobile-button-container">
               <div className="mobile-button" role="button" onClick={() => setMenuModalOpen(true)}>About</div>
               <div className="mobile-button" role="button" onClick={() => setCollectionModalOpen(true)}>Collections</div>
-              <div className="mobile-button">Ultra</div>
-              <div className="mobile-button">Rare</div>
+              <div className="mobile-button" role="button" onClick={() => setUltraModalOpen(true)}>Ultra</div>
+              <div className="mobile-button"><a href="https://nftier.tech/mint/hedera-holiday" target={"_blank"} rel={"noopener noreferrer"}>Mint</a></div>
               <div className="mobile-button">Partners</div>
               <div className="mobile-button">Socials</div>
           </div>
