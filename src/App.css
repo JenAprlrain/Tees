@@ -499,9 +499,10 @@ body {
 
 .mobile-button-container{
   position: fixed;
+  display: flex;
   left: 5%;
   right: 5%;
-  display: flex;
+  bottom: 25%;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -538,4 +539,6 @@ body {
     background-size: 200%;
     font-family: "Aller Bold Italic"
   }
+
+
 }
