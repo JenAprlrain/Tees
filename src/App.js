@@ -92,6 +92,8 @@ function App() {
   const [isMenuModalOpen, setMenuModalOpen] = useState("");
   const [isCollectionModalOpen, setCollectionModalOpen] = useState("");
   const [isUltraModalOpen, setUltraModalOpen] = useState("");
+  const [isPartnersModalOpen, setPartnersModalOpen] = useState("");
+  const [isSocialsModalOpen, setSocialsModalOpen] = useState("");
 
 
 const TeesModal = () => {
@@ -213,6 +215,76 @@ const TeesModal = () => {
             )
           }
         }
+
+        const PartnersModal = () => {
+          if (isPartnersModalOpen === true){
+          const title = <div className="containername"></div>
+          const content = (
+              <>
+              <br />
+              <p>Partners</p>
+              <br />
+              <br />
+              <p>Uman</p>
+              <br />
+              <br />
+              <p>Teens on Acid</p>
+              <br />
+              <br />
+              <p>ClokkWorky</p>
+              <br />
+              <br />
+              <p>Potluck Labs</p>
+              <br />
+              <br />
+              <p>Tombheads</p>
+              <br />
+              <br />
+              <p>FantomPunks</p>
+              <br />
+              <br />
+              </>
+            );
+
+          return (
+              <Modal
+                isOpen={isPartnersModalOpen}
+                onClose={() => setPartnersModalOpen(false)}
+                title={title}
+                content={content}
+              />
+              )
+            }
+          }
+
+          const SocialsModal = () => {
+            if (isSocialsModalOpen === true){
+            const title = <div className="containername"></div>
+            const content = (
+                <>
+                <br />
+                <div className="mobile-button"><a href="https://officialnftees.medium.com/" target={"_blank"} rel={"noopener noreferrer"}>Medium</a></div>
+                <br />
+                <br />
+                <div className="mobile-button"><a href="https://twitter.com/OfficialNFTees" target={"_blank"} rel={"noopener noreferrer"}>Twitter</a></div>
+                <br />
+                <br />
+                <div className="mobile-button"><a href="https://discord.com/invite/EkKahYya9g" target={"_blank"} rel={"noopener noreferrer"}>Discord</a></div>
+                <br />
+                <br />
+                </>
+              );
+
+            return (
+                <Modal
+                  isOpen={isSocialsModalOpen}
+                  onClose={() => setSocialsModalOpen(false)}
+                  title={title}
+                  content={content}
+                />
+                )
+              }
+            }
 
 
   // Requests access to the user's META MASK WALLET
@@ -359,13 +431,15 @@ const TeesModal = () => {
         {MenuModal()}
         {CollectionModal()}
         {UltraModal()}
+        {PartnersModal()}
+        {SocialsModal()}
                   <div className="mobile-button-container">
               <div className="mobile-button" role="button" onClick={() => setMenuModalOpen(true)}>About</div>
               <div className="mobile-button" role="button" onClick={() => setCollectionModalOpen(true)}>Collections</div>
               <div className="mobile-button" role="button" onClick={() => setUltraModalOpen(true)}>Ultra</div>
               <div className="mobile-button"><a href="https://nftier.tech/mint/hedera-holiday" target={"_blank"} rel={"noopener noreferrer"}>Mint</a></div>
-              <div className="mobile-button">Partners</div>
-              <div className="mobile-button">Socials</div>
+              <div className="mobile-button" role="button" onClick={() => setPartnersModalOpen(true)}>Partners</div>
+              <div className="mobile-button" role="button" onClick={() => setSocialsModalOpen(true)}>Socials</div>
           </div>
       </div>
       </div>
