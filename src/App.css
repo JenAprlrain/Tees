@@ -509,8 +509,8 @@ body {
 }
 
 .mobile-button {
-    background-color: black;
-    color: white;
+    background-color: #D3D1CA;
+    color: #C76159;
     font-size: 20px;
     padding: 10px 30px;
     border-radius: 5px;
@@ -523,44 +523,43 @@ body {
 }
 
 .mobile-button:hover{
-  background: linear-gradient(315deg, #008000 0%, #7CFC00 74%);
-  color: black;
+  background: white;
+  color: red;
 }
 
 .mobile-button:active{
-  background: black;
-  color: green;
+  background: white;
+  color: red;
 }
 
 @media (max-width: 649px) {
   body {
-    background: url(/src/data/background.png);
-    background-repeat: no-repeat;
-    background-size: 200%;
+    background-image: none;
+    background-color: #ABA295;
     font-family: "Aller Bold Italic"
   }
 
   a:link {
     text-decoration: none;
-    color: white;
+    color: #C76159;
   }
 
   /* visited link */
   a:visited {
     text-decoration: none;
-    color: white;
+    color: #C76159;
   }
 
   /* mouse over link */
   a:hover {
     text-decoration: none;
-    color: white;
+    color: #C76159
   }
 
   /* selected link */
   a:active {
     text-decoration: none;
-    color: white;
+    color: #C76159
   }
 
 .smalltext{

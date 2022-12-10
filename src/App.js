@@ -2,6 +2,7 @@ import container from "./data/container.png";
 import collections from "./data/collections.png";
 import jacket from "./data/umanjacket.jpg"
 import AuthVision from "./data/AuthenticVision.jpg";
+import sweater from "./data/HbarSweater.gif";
 import QR from "./data/QR.png";
 import Fantom from "./data/fantomlogo.png";
 import Hbar from "./data/hederaLogo.jpg";
@@ -102,6 +103,7 @@ function App() {
   const [isUltraModalOpen, setUltraModalOpen] = useState("");
   const [isPartnersModalOpen, setPartnersModalOpen] = useState("");
   const [isSocialsModalOpen, setSocialsModalOpen] = useState("");
+  const [isMintModalOpen, setMintModalOpen] = useState("");
 
   const [WhatIsTeesModalOpen, setWhatIsTeesModalOpen] = useState(false)
   const [IsTechnologyModalOpen, setIsTechnologyModalOpen] = useState(false)
@@ -228,6 +230,39 @@ const TeesModal = () => {
             )
           }
         }
+
+        const MintModal = () => {
+          if (isMintModalOpen === true){
+          const title = <div className="containername"></div>
+          const content = (
+              <>
+              <br />
+              <p>Hedera Holiday Sweaters</p>
+              <br />
+              <img src={sweater} alt="Hbar Sweater" width={"20%"}/>
+              <br />
+              <p>Hedera Christmas Sweater is a exclusive collection done in collaboration with the Hedera
+              foundation, Nfteir, and Potluck Protocol. Physical sweaters can be claimed only once by an
+              owner of the NFT. Please check to see if your NFT has been claimed for a physical before
+              buying on secondary markets.</p>
+              <br />
+              <br />
+              <a href="https://nftier.tech/mint/hedera-holiday" target={"_blank"} rel={"noopener noreferrer"}>Mint Here</a>
+              <br />
+              <br />
+              </>
+            );
+
+          return (
+              <Modal
+                isOpen={isMintModalOpen}
+                onClose={() => setMintModalOpen(false)}
+                title={title}
+                content={content}
+              />
+              )
+            }
+          }
 
         const PartnersModal = () => {
           if (isPartnersModalOpen === true){
@@ -579,11 +614,12 @@ const TeesModal = () => {
         {WhatIsTeesModal()}
         {TechnologyModal()}
         {ChainsModal()}
+        {MintModal()}
                   <div className="mobile-button-container">
               <div className="mobile-button" role="button" onClick={() => setMenuModalOpen(true)}>About</div>
               <div className="mobile-button" role="button" onClick={() => setCollectionModalOpen(true)}>Collections</div>
               <div className="mobile-button" role="button" onClick={() => setUltraModalOpen(true)}>Ultra</div>
-              <div className="mobile-button"><a href="https://nftier.tech/mint/hedera-holiday" target={"_blank"} rel={"noopener noreferrer"}>Mint</a></div>
+              <div className="mobile-button" role="button" onClick={() => setMintModalOpen(true)}>Now Minting</div>
               <div className="mobile-button" role="button" onClick={() => setPartnersModalOpen(true)}>Partners</div>
               <div className="mobile-button" role="button" onClick={() => setSocialsModalOpen(true)}>Socials</div>
           </div>
