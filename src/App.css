@@ -509,7 +509,7 @@ body {
 }
 
 .mobile-button {
-    background-color: #D3D1CA;
+    background-color: white;
     color: #C76159;
     font-size: 20px;
     padding: 10px 30px;
@@ -535,7 +535,7 @@ body {
 @media (max-width: 649px) {
   body {
     background-image: none;
-    background-color: white;
+    background-color: #ABA295;
     font-family: "Aller Bold Italic"
   }
 
