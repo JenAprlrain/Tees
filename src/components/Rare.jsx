@@ -13,7 +13,7 @@ export default function Rare() {
       <div className="box">
       <p className="box-title">Hedera Christmas Sweater</p>
         <div className="sub-box"> 
-        <img src={sweater} alt="Hbar Sweater" width={"100%"} height={"100%"}/></div>
+        <img src={sweater} alt="Hbar Sweater" width={"100%"} /></div>
         <p className="box-details">
           Hedera Christmas Sweater is a exclusive collection done in collaboration with the Hedera
           foundation, Nfteir, and Potluck Protocol. Physical sweaters can be claimed only once by an
