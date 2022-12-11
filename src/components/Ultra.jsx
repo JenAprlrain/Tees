@@ -1,5 +1,5 @@
 import "../App.css";
-import jacket from "../data/umanjacket.jpg"
+import jacket from "../data/jacket.gif"
 
 export default function Ultra() {
   return (

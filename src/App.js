@@ -1,6 +1,6 @@
 import container from "./data/container.png";
 import collections from "./data/collections.png";
-import jacket from "./data/umanjacket.jpg"
+import jacket from "./data/jacket.gif"
 import AuthVision from "./data/AuthenticVision.jpg";
 import sweater from "./data/HbarSweater.gif";
 import QR from "./data/QR.png";
@@ -697,7 +697,7 @@ const TeesModal = () => {
                       </div>
                       </div>
                      <br />
-                      <div>Uman is an Ecuadorian artist and creator of the World of Umans. 
+                      <div className="smalltext">Uman is an Ecuadorian artist and creator of the World of Umans. 
                      She studied design at Parsons School of Design in New York City and has created multiple 
                      collections on Ethereum and Fantom. She has received accolates including 2021 Artist of the
                       Year and Collection of the Year at the Fantom Developer Conference was recognized at NFT 
@@ -746,7 +746,7 @@ const TeesModal = () => {
                       </div>
                       </div>
                       <br />
-                       <div>Joshua Thorsen, also known as Teens On Acid (TOA), 
+                       <div className="smalltext">Joshua Thorsen, also known as Teens On Acid (TOA), 
                      is an Australian neo-pop artist best known in the NFT space for his edgy and energetic 
                      Astro-kids and Acid cats collections. TOA has created several popular collections both 
                      on-and-off chain, on a variety of mediums including clothing, skateboards, digital canvas 
@@ -755,7 +755,7 @@ const TeesModal = () => {
                      market volume. TOA is very engaging with his community and can be seen attending weekly 
                      auctions in the Tombheads Auctionhouse discord, where he is among the highest-selling 
                      artists to date. 
-                     <br /><br /><div>TEES has been working on a collaboration with TOA to bring TOA 
+                     <br /><br /><div className="smalltext">TEES has been working on a collaboration with TOA to bring TOA 
                      collectors favorite NFTs to life in physical apparel. Release date to be announced.</div>
                          </div>
                          <br />
@@ -793,13 +793,13 @@ const TeesModal = () => {
                       </div>
                       </div>
                       <br />
-                       <div>Clokkworky is an artist who describes his style as, “Psychedelic Cubism - Abstract Art - 
+                       <div className="smalltext">Clokkworky is an artist who describes his style as, “Psychedelic Cubism - Abstract Art - 
                      Psychedelic Art & Pepedelic Cryptocubism.” His unique ability, skill and appeal to crypto 
                      space have resulted in some of the highest single-piece sales on Fantom blockchain NFT 
                      auctions to date. 
                      <br />
                      <br />
-                     <div>OfficialNFTees has partnered with Clokkworky on vibrant, three piece 
+                     <div className="smalltext">OfficialNFTees has partnered with Clokkworky on vibrant, three piece 
                      collection that brought his artistic genius to the forefront of the Royal Tees collection. 
                      Clokkworky has also created a three-piece collection of “Crypto Deities” named by the 
                      cross-section of OfficialNFTees/Clokkworky community-members. Limited release of these 
@@ -831,17 +831,17 @@ const TeesModal = () => {
                       <img src={potluck} alt="Logo" width={"80%"} height={"auto"}/>
                       </div>
                       <br />
-                       <div>Potluck Labs is an NFT incubator that has partnered with tens of popular artists to launch 
+                       <div className="smalltext">Potluck Labs is an NFT incubator that has partnered with tens of popular artists to launch 
                      successful NFT collections across seven different blockchains (including, ETH, AVAX, MATIC and 
                      HBAR), and continues to expand its reach for its more-than 6,500 unique holders. 
                      </div>
-                     <div>Unlike NFT launchpads that focus on the launch phase of a collection, as an incubator, Potluck Labs covers 
+                     <div className="smalltext">Unlike NFT launchpads that focus on the launch phase of a collection, as an incubator, Potluck Labs covers 
                      everything from the marketing effort, to setting up and launching smart contracts, to assisting 
                      with direction and roadmap. Due to this approach and strong team vision, Potluck Labs continues 
                      to fill a gap in the NFT space, which has brought value to artists and collectors alike. 
                      </div>
                      <br />
-                     <div>OfficialNFTees has partnered with Potluck labs for Hedera Holiday sweaters, with additional 
+                     <div className="smalltext">OfficialNFTees has partnered with Potluck labs for Hedera Holiday sweaters, with additional 
                      cross-chain collaborations planned in 2023.</div>
                          <br />
                          <a href="https://www.potluck-labs.com/" target="_blank" rel="noreferrer">
@@ -870,17 +870,17 @@ const TeesModal = () => {
                       <img src={tomb2} alt="Logo" width={"30%"} height={"auto"}/>
                       <img src={tomb} alt="Logo" width={"10%"} height={"auto"}/>
                       </div>
-                       <div>The Tombheads Auctionhouse is a multi-chain, Discord-based Auctionhouse that has attracted a 
+                       <div className="smalltext">The Tombheads Auctionhouse is a multi-chain, Discord-based Auctionhouse that has attracted a 
                      collaborative community of top-quality creators from across artistic disciplines, as well as a 
                      vibrant community of NFT collectors. The Tombheads team has also pioneered several aspects of 
                      the Fantom NFT scene, offering the first and most successful free mint to date, Degenerabbits. 
                      This collection included a full roadmap and is among the highest-volume collections on Fantom 
                      to date. </div>
-                     <div>Tombheads has also partnered with many community artists to host mint events, which 
+                     <div className="smalltext">Tombheads has also partnered with many community artists to host mint events, which 
                      have been among the most successful mints on Fantom, and Tombheads Awards, which was a full 
                      award-show style event with web 3 flare, as community members nominated and voted for their 
                      favorite contributors across several awards categories.</div>
-                     <div>OfficialNFTees partnered with Tombheads 
+                     <div className="smalltext">OfficialNFTees partnered with Tombheads 
                      on a three-piece release within the Royal Tees collection, which are among the highest primary 
                      sale pieces to and were sold in the Tombheads Auctionhouse. OfficialNFTees has participated in 
                      a number of Tombheads Auctionhouse Regulars auctions throughout 2021 and 2022.
@@ -918,16 +918,16 @@ const TeesModal = () => {
                      <img src={babypunk} alt="Logo" width={"60%"} height={"auto"}/>
                       </div>
                       </div>
-                       <div>Sarge is one of the pioneers of the Fantom NFT scene, whose 100-piece collection of 
+                       <div className="smalltext">Sarge is one of the pioneers of the Fantom NFT scene, whose 100-piece collection of 
                      FantomPunks has been among the most popular on Fantom since launching in early 2021. 
                      Since then, Sarge has contributed much to the community through free mints, airdrops to 
                      existing FantomPunks Holders, and his “SWOL” art collaborations with NFT Incubator Potluck 
                      Labs. </div>
                      <br />
-                     <div>FantomPunks, in combination with Gotham Apes, also hosted a first-of-its-kind in-person 
+                     <div className="smalltext">FantomPunks, in combination with Gotham Apes, also hosted a first-of-its-kind in-person 
                      NFT Auction in Austin, TX during SXSW in March of 2021.</div>
                      <br />
-                     <div> TEES and FantomPunks made one of the 
+                     <div className="smalltext"> TEES and FantomPunks made one of the 
                      first multi-NFT collaborations on the Fantom blockchain as part of the FantomPunks and Royal 
                      Tees collections
                          </div>
