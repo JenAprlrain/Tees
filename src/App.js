@@ -292,13 +292,13 @@ const TeesModal = () => {
             <br />
             <p>The Uman Jacket</p>
             <br />
-            <img src={jacket} alt="jacket" width={"20%"}/>
+            <img src={jacket} alt="jacket" width={"50%"}/>
             <br />
-            <p>This jacket was the masterpiece of the 11-NFTEE collab with acclaimed multi-chain artist, UMAN.
+            <div><span className="smalltext">This jacket was the masterpiece of the 11-NFTEE collab with acclaimed multi-chain artist, UMAN.
             The canvas itself is a yves saint laurent jean jacket. Tees tags were affixed to the arm and
             back of the jacket by officialnftees, and the uman pictured above was painted on by
             the artist. The piece went up for auction on paintswap on OCT 31st, 2021, and sold for
-            8,500 FTM  (~$24,395 USD value at time of sale).</p>
+            8,500 FTM  (~$24,395 USD value at time of sale).</span></div>
             <br />
             <br />
             </>

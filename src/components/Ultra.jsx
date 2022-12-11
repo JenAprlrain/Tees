@@ -14,7 +14,7 @@ export default function Ultra() {
       <p className="box-title">THE UMAN JACKET</p>
       <br />
         <div className="sub-box">
-       <img src={jacket} alt="jacket" width={"100%"} height={"100%"}/></div>
+       <img src={jacket} alt="jacket" width={"100%"} /></div>
        <br />
         <p className="box-details">
         This jacket was the masterpiece of the 11-NFTEE collab with acclaimed multi-chain artist, UMAN.
