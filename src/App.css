@@ -151,7 +151,7 @@ body {
 .connect-highlight {
   width: min-content;
   margin-left: 22.1em;
-  margin-top: -15.4em;
+  margin-top: -15.0em;
   opacity: 0;
 }
 .connect-highlight img {
@@ -565,5 +565,12 @@ body {
 .smalltext{
   font-size: .7rem;
 }
+.row {
+  display:flex;
+ }
+ .column2 {
+  flex:1;
+  margin:5px;
+ }
 
 }

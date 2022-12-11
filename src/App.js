@@ -32,8 +32,36 @@ import Menu from "./components/menu";
 import { ethers } from "ethers";
 import React, { useState,} from 'react';
 import Modal from './components/Modal/Modal';
-import comingsoon from "./data/comingsoon.jpg";
 import MediaQuery from 'react-responsive';
+import hat1 from "./data/hat1.png";
+import hat2 from "./data/hat2.png";
+import hat3 from "./data/hat3.png";
+import comm1 from "./data/community-img1.png";
+import comm2 from "./data/community-img2.jpg";
+import comm3 from "./data/community-img3.png";
+import moon from "./data/moon.gif";
+import build from "./data/build.gif";
+import spooky from "./data/spooky.gif";
+import uman from "./data/uman.png";
+import uman1 from "./data/uman1.png";
+import uman2 from "./data/uman2.png";
+import TOA1 from "./data/TOA1.png";
+import TOA2 from "./data/TOA2.png";
+import TOA3 from "./data/TOA3.png";
+import clokk from "./data/clokk.png";
+import clokk2 from "./data/clokk2.png";
+import clokk3 from "./data/clokk3.png";
+import potluck from "./data/potluck.png";
+import tomb from "./data/tomb.jpg";
+import tomb2 from "./data/tomb.jpeg";
+import punk from "./data/punks.png";
+import punk2 from "./data/punk2.png";
+import babypunk from "./data/babypunk.png";
+import WhatisTees from "./data/WhatisTees.mp4";
+import Jmoney from "./data/James.png";
+import z14 from "./data/Zan.png";
+import Jerrod from "./data/Jerrod.png";
+import Jen from "./data/Jen.png"
 
 
 
@@ -109,6 +137,18 @@ function App() {
   const [IsTechnologyModalOpen, setIsTechnologyModalOpen] = useState(false)
   const [ChainsModalOpen, setChainsModalOpen] = useState(false)
 
+  const [RoyalTeesModalOpen, setRoyalTeesModalOpen] = useState(false)
+  const [CommuniTeesModalOpen, setCommuniTeesModalOpen] = useState(false)
+  const [LifeStyleModalOpen, setLifeStyleModalOpen] = useState(false)
+
+  const [UmanModalOpen, setUmanModalOpen] = useState(false)
+  const [TOAModalOpen, setTOAModalOpen] = useState(false)
+  const [ClokkModalOpen, setClokkModalOpen] = useState(false)
+  const [PotluckModalOpen, setPotluckModalOpen] = useState(false)
+  const [TombModalOpen, setTombModalOpen] = useState(false)
+  const [PunkModalOpen, setPunkModalOpen] = useState(false)
+
+  const [TeamModalOpen, setTeamModalOpen] = useState(false)
 
 
 const TeesModal = () => {
@@ -116,11 +156,10 @@ const TeesModal = () => {
   const title = <div className="containername"></div>
   const content = (
       <>
-      <img src={comingsoon} alt="Logo" width={"25%"} height={"auto"}/>
       <br />
       <br />
       <div>
-      <h2>TEES BRAND VIDEO DROPPING Dec 2022</h2>
+      <video src={WhatisTees} width="50%" controls></video>
       </div>
       <br />
       <br />
@@ -141,6 +180,51 @@ const TeesModal = () => {
       )
     }
   }
+  const TeamModal = () => {
+    if (TeamModalOpen === true){
+    const title = <div className="containername"></div>
+    const content = (
+        <>
+       <div className="teams">
+        <div className="teams__fashionHead-section">
+    <div className="row">
+     <div class="column2">
+      <br />
+      <a href="https://twitter.com/0xJMONEY" target="_blank" rel="noreferrer">
+      <img src={Jmoney} alt="jmoney" width={"100%"}/></a>jmoney
+    </div>
+    <div class="column2">
+      <br />
+      <a href="https://twitter.com/DeFiiGhost" target="_blank" rel="noreferrer">
+      <img src={z14} alt="z14" width={"100%"}/></a>Z14
+    </div>          
+    <div class="column2">
+      <br />
+      <a href="https://twitter.com/Jerr0d_" target="_blank" rel="noreferrer">
+      <img src={Jerrod} alt="Jerrod" width={"100%"}/></a>J3rr0d
+    </div>
+    <div class="column2">
+      <br />
+      <a href="https://twitter.com/jen_aprilrain" target="_blank" rel="noreferrer">
+      <img src={Jen} alt="Jen" width={"100%"}/></a>Jen
+    </div>             
+  </div>
+    </div>
+    </div>
+        </>
+      );
+  
+    return (
+        <Modal
+          isOpen={TeamModalOpen}
+          onClose={() => setTeamModalOpen(false)}
+          title={title}
+          content={content}
+        />
+        )
+      }
+    }
+  
 
   const MenuModal = () => {
     if (isMenuModalOpen === true){
@@ -177,13 +261,13 @@ const TeesModal = () => {
       const content = (
           <>
           <br />
-          <p>ROYALTEES Collection</p>
+          <div role="button" onClick={() => (setRoyalTeesModalOpen(true), setCollectionModalOpen(false))}>RoyalTees Collection</div>
           <br />
           <br />
-          <p>COMMUNITEES Collection</p>
+          <div role="button" onClick={() => (setCommuniTeesModalOpen(true), setCollectionModalOpen(false))}>CommuniTees Collection</div>
           <br />
           <br />
-          <p>LIFESTYLE Collection</p>
+          <div role="button" onClick={() => (setLifeStyleModalOpen(true), setCollectionModalOpen(false))}>LifeStyle Collection</div>
           <br />
           <br />
           </>
@@ -270,25 +354,22 @@ const TeesModal = () => {
           const content = (
               <>
               <br />
-              <p>Partners</p>
+              <div role="button" onClick={() => (setUmanModalOpen(true), setPartnersModalOpen(false))}>Uman</div>
               <br />
               <br />
-              <p>Uman</p>
+              <div role="button" onClick={() => (setTOAModalOpen(true), setPartnersModalOpen(false))}>Teens on Acid</div>
               <br />
               <br />
-              <p>Teens on Acid</p>
+              <div role="button" onClick={() => (setClokkModalOpen(true), setPartnersModalOpen(false))}>ClokkWorky</div>
               <br />
               <br />
-              <p>ClokkWorky</p>
+              <div role="button" onClick={() => (setPotluckModalOpen(true), setPartnersModalOpen(false))}>Potluck Labs</div>
               <br />
               <br />
-              <p>Potluck Labs</p>
+              <div role="button" onClick={() => (setTombModalOpen(true), setPartnersModalOpen(false))}>Tombheads</div>
               <br />
               <br />
-              <p>Tombheads</p>
-              <br />
-              <br />
-              <p>FantomPunks</p>
+              <div role="button" onClick={() => (setPunkModalOpen(true), setPartnersModalOpen(false))}>FantomPunks</div>
               <br />
               <br />
               </>
@@ -463,7 +544,410 @@ const TeesModal = () => {
                    )
                  }
                }
-
+               const RoyalTeesModal = () => {
+                if (RoyalTeesModalOpen === true){
+                const title = <div>RoyalTees Collection<br/></div>
+                const content = (
+                  <>
+                  <div className= "row">
+                     <div className= "column2">
+                   <img src={moon} alt="Logo" width={"60%"} height={"auto"}/>
+                   </div>
+                   <div className= "column2">
+                   <img src={build} alt="Logo" width={"60%"} height={"auto"}/>
+                    </div>
+                    <div className= "column2">
+                   <img src={spooky} alt="Logo" width={"60%"} height={"auto"}/>
+                    </div>
+                    </div>
+                    <br />
+                    <a href="https://paintswap.finance/marketplace/collections/officialnftees-lifestyle-collection" target="_blank" rel="noreferrer">
+                    <button className= "button2">Visit collection on PaintSwap</button>
+                    </a>
+                    <br />
+                    <br />
+                    <div>Our Genesis 100 OG NFTee Collection was our first, launching on ZooCoin NFT Marketplace 
+                   in April of 2021, and subsequently migrating to Paintswap. These NFTees are focused on 
+                   celebrating the Fantom Ecosystem. Each holder earns royalties earned by the contract from 
+                   primary and secondary sales, and subsequent collections will also funnel royaltees to holders 
+                   of these 100 NFTees.
+                      <br/>
+                      <br />
+                      </div>
+                  </>
+                );
+           
+           
+            return (
+                  <Modal
+                    isOpen={RoyalTeesModalOpen}
+                    onClose={() => (setRoyalTeesModalOpen(false), setCollectionModalOpen(true))}
+                    title={title}
+                    content={content}
+                  />
+                   )
+                 }
+               }
+               const CommuniTeesModal = () => {
+                 if (CommuniTeesModalOpen === true){
+                 const title = <div>CommuniTees Collection<br/></div>
+                 const content = (
+                   <>
+                   <div className= "row">
+                     <div className= "column2">
+                   <img src={comm1} alt="Logo" width={"60%"} height={"auto"}/>
+                   </div>
+                   <div className= "column2">
+                   <img src={comm2} alt="Logo" width={"60%"} height={"auto"}/>
+                    </div>
+                    <div className= "column2">
+                   <img src={comm3} alt="Logo" width={"60%"} height={"auto"}/>
+                    </div>
+                    </div>
+                    <br />
+                    <div className= "row">
+                   <div className= "column2">
+                    <a href="https://paintswap.finance/marketplace/collections/officialnftees-communitee-collection" target="_blank" rel="noreferrer">
+                    <button className= "button2">Visit collection on PaintSwap</button>
+                    </a>
+                    </div>
+                    <div className= "column2">
+                    <a href="https://nftkey.app/collections/teescc/" target="_blank" rel="noreferrer">
+                    <button className= "button2">Visit collection on NFTKey</button>
+                    </a>
+                    </div>
+                    </div>
+                    <br />
+                     <div>The CommuniTee Collection pays homage to the OG 8-bit NFT projects on Fantom as well as 
+                   several OG protocols and influencers within the the Fantom community. This collection 
+                   recognizes that the 100 OG NFTees are not accessible to all members of the community, and 
+                   seeks to grow our engagement. This contract will earn Royaltees for 100 OG NFTee holders.
+                       <br/><br/>
+                       </div>
+                   </>
+                 );
+            
+            
+             return (
+                   <Modal
+                     isOpen={CommuniTeesModalOpen}
+                     onClose={() => (setCommuniTeesModalOpen(false), setCollectionModalOpen(true))}
+                     title={title}
+                     content={content}
+                   />
+                    )
+                  }
+                }
+                const LifeStyleModal = () => {
+                 if (LifeStyleModalOpen === true){
+                 const title = <div>LifeStyle Collection<br/></div>
+                 const content = (
+                   <>
+                   <div className= "row">
+                     <div className= "column2">
+                   <img src={hat1} alt="Logo" width={"80%"} height={"auto"}/>
+                   </div>
+                   <div className= "column2">
+                   <img src={hat2} alt="Logo" width={"100%"} height={"auto"}/>
+                    </div>
+                    <div className= "column2">
+                   <img src={hat3} alt="Logo" width={"80%"} height={"auto"}/>
+                    </div>
+                    </div>
+                    <a href="https://paintswap.finance/marketplace/collections/officialnftees-lifestyle-collection" target="_blank" rel="noreferrer">
+                    <button className= "button2">Visit collection on PaintSwap</button>
+                    </a>
+                    <br />
+                    <br />
+                     <div>
+                     This collection features incredibly customized and unique collaborations with artists, 
+                   pushing the boundries of artistic mediums and canvases and exploring the idea of "what a 
+                   physical NFT can be."
+                       <br/>
+                       <br/>
+                       </div>
+                   </>
+                 );
+            
+            
+             return (
+                   <Modal
+                     isOpen={LifeStyleModalOpen}
+                     onClose={() => (setLifeStyleModalOpen(false), setCollectionModalOpen(true))}
+                     title={title}
+                     content={content}
+                   />
+                    )
+                  }
+                }
+                const UmanModal = () => { 
+                  if (UmanModalOpen === true){
+                  const title = <div>Uman<br/></div>
+                  const content = (
+                    <>
+                     <div className= "row">
+                       <div className= "column2">
+                     <img src={uman1} alt="Logo" width={"35%"} height={"auto"}/>
+                     </div>
+                     <div className= "column2">
+                     <img src={uman} alt="Logo" width={"40%"} height={"auto"}/>
+                      </div>
+                      <div className= "column2">
+                     <img src={uman2} alt="Logo" width={"35%"} height={"auto"}/>
+                      </div>
+                      </div>
+                     <br />
+                      <div>Uman is an Ecuadorian artist and creator of the World of Umans. 
+                     She studied design at Parsons School of Design in New York City and has created multiple 
+                     collections on Ethereum and Fantom. She has received accolates including 2021 Artist of the
+                      Year and Collection of the Year at the Fantom Developer Conference was recognized at NFT 
+                      NYC in 2021 as a "Best NFT Artist" nominee and "Best NFT Emerging Artist", having 
+                      her piece, “I am Uman”, displayed in Times Square. Her collections are among the most 
+                      highest-volume collections to date on the Fantom blockchain. 
+                      <br />
+                      <br />
+                      <div>OfficialNFTees had the pleasure of collaborating with Uman on an 11-piece sub-collection of the original Royal 
+                      Tees collection, which featured the Uman Jacket, a hand-painted physical NFTee replica 
+                      painted on a Yves Saint Laurent jean jacket. See her website below for links to all of her 
+                      outstanding collections.</div>
+                        </div>
+                        <br />
+                        <a href="https://www.worldofumans.com/home" target="_blank" rel="noreferrer">
+                        <button className= "button2">View Uman Website</button></a>
+                    </>
+                  );
+             
+             
+              return (
+                    <Modal
+                      isOpen={UmanModalOpen}
+                      onClose={() => (setUmanModalOpen(false),setPartnersModalOpen(true))}
+                      title={title}
+                      content={content}
+                    />
+                     )
+                   }
+                 }
+                 const TOAModal = () => {
+                   if (TOAModalOpen === true){
+                   const title = <div>Teens On Acid<br/></div>
+                   const content = (
+                     <>
+                     <br />
+                     <div className= "row">
+                       <div className= "column2">
+                     <img src={TOA2} alt="Logo" width={"35%"} height={"auto"}/>
+                     </div>
+                     <div className= "column2">
+                     <img src={TOA1} alt="Logo" width={"35%"} height={"auto"}/>
+                      </div>
+                      <div className= "column2">
+                     <img src={TOA3} alt="Logo" width={"35%"} height={"auto"}/>
+                      </div>
+                      </div>
+                      <br />
+                       <div>Joshua Thorsen, also known as Teens On Acid (TOA), 
+                     is an Australian neo-pop artist best known in the NFT space for his edgy and energetic 
+                     Astro-kids and Acid cats collections. TOA has created several popular collections both 
+                     on-and-off chain, on a variety of mediums including clothing, skateboards, digital canvas 
+                     and more. His collections are among the most popular in the FTM and AVAX NFT communities, 
+                     and he has also launched successful collections on Ethereum with substantial secondary 
+                     market volume. TOA is very engaging with his community and can be seen attending weekly 
+                     auctions in the Tombheads Auctionhouse discord, where he is among the highest-selling 
+                     artists to date. 
+                     <br /><br /><div>TEES has been working on a collaboration with TOA to bring TOA 
+                     collectors favorite NFTs to life in physical apparel. Release date to be announced.</div>
+                         </div>
+                         <br />
+                         <a href="https://teensonacid.portfoliobox.net/" target="_blank" rel="noreferrer">
+                        <button className= "button2">View TOA Website</button></a>
+                     </>
+                   );
+              
+              
+               return (
+                     <Modal
+                       isOpen={TOAModalOpen}
+                       onClose={() => (setTOAModalOpen(false),setPartnersModalOpen(true))}
+                       title={title}
+                       content={content}
+                     />
+                      )
+                    }
+                  }
+                  const ClokkModal = () => {
+                   if (ClokkModalOpen === true){
+                   const title = <div>Clokkworky<br/></div>
+                   const content = (
+                     <>
+                     <br />
+                     <div className= "row">
+                       <div className= "column2">
+                     <img src={clokk2} alt="Logo" width={"45%"} height={"auto"}/>
+                     </div>
+                     <div className= "column2">
+                     <img src={clokk} alt="Logo" width={"60%"} height={"auto"}/>
+                      </div>
+                      <div className= "column2">
+                     <img src={clokk3} alt="Logo" width={"45%"} height={"auto"}/>
+                      </div>
+                      </div>
+                      <br />
+                       <div>Clokkworky is an artist who describes his style as, “Psychedelic Cubism - Abstract Art - 
+                     Psychedelic Art & Pepedelic Cryptocubism.” His unique ability, skill and appeal to crypto 
+                     space have resulted in some of the highest single-piece sales on Fantom blockchain NFT 
+                     auctions to date. 
+                     <br />
+                     <br />
+                     <div>OfficialNFTees has partnered with Clokkworky on vibrant, three piece 
+                     collection that brought his artistic genius to the forefront of the Royal Tees collection. 
+                     Clokkworky has also created a three-piece collection of “Crypto Deities” named by the 
+                     cross-section of OfficialNFTees/Clokkworky community-members. Limited release of these 
+                     designs are planned with a TBD drop date.</div>
+                         </div>
+                         <br />
+                         <a href="https://linktr.ee/clokkworky" target="_blank" rel="noreferrer">
+                        <button className= "button2">View Clokkworky Website</button></a>
+                     </>
+                   );
+              
+              
+               return (
+                     <Modal
+                       isOpen={ClokkModalOpen}
+                       onClose={() => (setClokkModalOpen(false),setPartnersModalOpen(true))}
+                       title={title}
+                       content={content}
+                     />
+                      )
+                    }
+                  }
+                  const PotluckModal = () => {
+                   if (PotluckModalOpen === true){
+                   const title = <div>Potluck Labs<br/></div>
+                   const content = (
+                     <>
+                      <div>
+                      <img src={potluck} alt="Logo" width={"80%"} height={"auto"}/>
+                      </div>
+                      <br />
+                       <div>Potluck Labs is an NFT incubator that has partnered with tens of popular artists to launch 
+                     successful NFT collections across seven different blockchains (including, ETH, AVAX, MATIC and 
+                     HBAR), and continues to expand its reach for its more-than 6,500 unique holders. 
+                     </div>
+                     <div>Unlike NFT launchpads that focus on the launch phase of a collection, as an incubator, Potluck Labs covers 
+                     everything from the marketing effort, to setting up and launching smart contracts, to assisting 
+                     with direction and roadmap. Due to this approach and strong team vision, Potluck Labs continues 
+                     to fill a gap in the NFT space, which has brought value to artists and collectors alike. 
+                     </div>
+                     <br />
+                     <div>OfficialNFTees has partnered with Potluck labs for Hedera Holiday sweaters, with additional 
+                     cross-chain collaborations planned in 2023.</div>
+                         <br />
+                         <a href="https://www.potluck-labs.com/" target="_blank" rel="noreferrer">
+                        <button className= "button2">View Potluck Website</button></a>
+                     </>
+                   );
+              
+              
+               return (
+                     <Modal
+                       isOpen={PotluckModalOpen}
+                       onClose={() => (setPotluckModalOpen(false),setPartnersModalOpen(true))}
+                       title={title}
+                       content={content}
+                     />
+                      )
+                    }
+                  }
+                  const TombModal = () => {
+                   if (TombModalOpen === true){
+                   const title = <div>Tombheads<br/></div>
+                   const content = (
+                     <>
+                      <div>
+                      <img src={tomb} alt="Logo" width={"10%"} height={"auto"}/>
+                      <img src={tomb2} alt="Logo" width={"30%"} height={"auto"}/>
+                      <img src={tomb} alt="Logo" width={"10%"} height={"auto"}/>
+                      </div>
+                       <div>The Tombheads Auctionhouse is a multi-chain, Discord-based Auctionhouse that has attracted a 
+                     collaborative community of top-quality creators from across artistic disciplines, as well as a 
+                     vibrant community of NFT collectors. The Tombheads team has also pioneered several aspects of 
+                     the Fantom NFT scene, offering the first and most successful free mint to date, Degenerabbits. 
+                     This collection included a full roadmap and is among the highest-volume collections on Fantom 
+                     to date. </div>
+                     <div>Tombheads has also partnered with many community artists to host mint events, which 
+                     have been among the most successful mints on Fantom, and Tombheads Awards, which was a full 
+                     award-show style event with web 3 flare, as community members nominated and voted for their 
+                     favorite contributors across several awards categories.</div>
+                     <div>OfficialNFTees partnered with Tombheads 
+                     on a three-piece release within the Royal Tees collection, which are among the highest primary 
+                     sale pieces to and were sold in the Tombheads Auctionhouse. OfficialNFTees has participated in 
+                     a number of Tombheads Auctionhouse Regulars auctions throughout 2021 and 2022.
+                         </div>
+                         <br />
+                         <a href="https://ftmwatch.com/tombheads-auction-house/" target="_blank" rel="noreferrer">
+                        <button className= "button2">View Tombheads Website</button></a>
+                     </>
+                   );
+              
+              
+               return (
+                     <Modal
+                       isOpen={TombModalOpen}
+                       onClose={() => (setTombModalOpen(false),setPartnersModalOpen(true))}
+                       title={title}
+                       content={content}
+                     />
+                      )
+                    }
+                  }
+                  const PunkModal = () => {
+                   if (PunkModalOpen === true){
+                   const title = <div>Fantom Punks<br/></div>
+                   const content = (
+                     <>
+                     <div className= "row">
+                       <div className= "column2">
+                     <img src={punk} alt="Logo" width={"60%"} height={"auto"}/>
+                     </div>
+                     <div className= "column2">
+                     <img src={punk2} alt="Logo" width={"45%"} height={"auto"}/>
+                      </div>
+                      <div className= "column2">
+                     <img src={babypunk} alt="Logo" width={"60%"} height={"auto"}/>
+                      </div>
+                      </div>
+                       <div>Sarge is one of the pioneers of the Fantom NFT scene, whose 100-piece collection of 
+                     FantomPunks has been among the most popular on Fantom since launching in early 2021. 
+                     Since then, Sarge has contributed much to the community through free mints, airdrops to 
+                     existing FantomPunks Holders, and his “SWOL” art collaborations with NFT Incubator Potluck 
+                     Labs. </div>
+                     <br />
+                     <div>FantomPunks, in combination with Gotham Apes, also hosted a first-of-its-kind in-person 
+                     NFT Auction in Austin, TX during SXSW in March of 2021.</div>
+                     <br />
+                     <div> TEES and FantomPunks made one of the 
+                     first multi-NFT collaborations on the Fantom blockchain as part of the FantomPunks and Royal 
+                     Tees collections
+                         </div>
+                         <br />
+                         <a href="https://twitter.com/FantomPunks" target="_blank" rel="noreferrer">
+                        <button className= "button2">View FantomPunks Twitter</button></a>
+                     </>
+                   );
+              
+              
+               return (
+                     <Modal
+                       isOpen={PunkModalOpen}
+                       onClose={() => (setPunkModalOpen(false),setPartnersModalOpen(true))}
+                       title={title}
+                       content={content}
+                     />
+                      )
+                    }
+                  }
 
   // Requests access to the user's META MASK WALLET
   // https://metamask.io
@@ -544,7 +1028,7 @@ const TeesModal = () => {
           </a>
         </div>
         <div className="connect-highlight">
-        <button onClick={requestAccount}><img src={connect} alt=""/></button>
+        <a href="" onClick={requestAccount}><img src={connect} alt=""/></a>
         </div>
         <div className="medium-highlight">
           <a href="https://officialnftees.medium.com/" target="_blank" rel="noreferrer">
@@ -614,13 +1098,25 @@ const TeesModal = () => {
         {WhatIsTeesModal()}
         {TechnologyModal()}
         {ChainsModal()}
+        {RoyalTeesModal()}
+        {CommuniTeesModal()}
+        {LifeStyleModal()}
+        {UmanModal()}
+        {TOAModal()}
+        {ClokkModal()}
+        {PotluckModal()}
+        {TombModal()}
+        {PunkModal()}
         {MintModal()}
+        {TeamModal()}
                   <div className="mobile-button-container">
               <div className="mobile-button" role="button" onClick={() => setMenuModalOpen(true)}>About</div>
+              <div className="mobile-button" role="button" onClick={() => setTeesModalOpen(true)}>Videos</div>
               <div className="mobile-button" role="button" onClick={() => setCollectionModalOpen(true)}>Collections</div>
               <div className="mobile-button" role="button" onClick={() => setUltraModalOpen(true)}>Ultra</div>
               <div className="mobile-button" role="button" onClick={() => setMintModalOpen(true)}>Now Minting</div>
               <div className="mobile-button" role="button" onClick={() => setPartnersModalOpen(true)}>Partners</div>
+              <div className="mobile-button" role="button" onClick={() => setTeamModalOpen(true)}>Team</div>
               <div className="mobile-button" role="button" onClick={() => setSocialsModalOpen(true)}>Socials</div>
           </div>
       </div>
