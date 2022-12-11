@@ -323,12 +323,12 @@ const TeesModal = () => {
               <br />
               <p>Hedera Holiday Sweaters</p>
               <br />
-              <img src={sweater} alt="Hbar Sweater" width={"20%"}/>
+              <img src={sweater} alt="Hbar Sweater" width={"50%"}/>
               <br />
-              <p>Hedera Christmas Sweater is a exclusive collection done in collaboration with the Hedera
+              <div><span className="smalltext">Hedera Christmas Sweater is a exclusive collection done in collaboration with the Hedera
               foundation, Nfteir, and Potluck Protocol. Physical sweaters can be claimed only once by an
               owner of the NFT. Please check to see if your NFT has been claimed for a physical before
-              buying on secondary markets.</p>
+              buying on secondary markets.</span></div>
               <br />
               <br />
               <a href="https://nftier.tech/mint/hedera-holiday" target={"_blank"} rel={"noopener noreferrer"}>Mint Here</a>
