@@ -392,13 +392,13 @@ const TeesModal = () => {
             const content = (
                 <>
                 <br />
-                <div className="mobile-button"><a href="https://officialnftees.medium.com/" target={"_blank"} rel={"noopener noreferrer"}>Medium</a></div>
+                <div className="mobile-button2"><a href="https://officialnftees.medium.com/" target={"_blank"} rel={"noopener noreferrer"}>Medium</a></div>
                 <br />
                 <br />
-                <div className="mobile-button"><a href="https://twitter.com/OfficialNFTees" target={"_blank"} rel={"noopener noreferrer"}>Twitter</a></div>
+                <div className="mobile-button2"><a href="https://twitter.com/OfficialNFTees" target={"_blank"} rel={"noopener noreferrer"}>Twitter</a></div>
                 <br />
                 <br />
-                <div className="mobile-button"><a href="https://discord.com/invite/EkKahYya9g" target={"_blank"} rel={"noopener noreferrer"}>Discord</a></div>
+                <div className="mobile-button2"><a href="https://discord.com/invite/EkKahYya9g" target={"_blank"} rel={"noopener noreferrer"}>Discord</a></div>
                 <br />
                 <br />
                 </>

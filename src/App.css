@@ -509,13 +509,22 @@ body {
 }
 
 .mobile-button {
-    background-color: white;
+    background-color: #D3D1CA;
     color: #C76159;
     font-size: 20px;
     padding: 10px 30px;
     border-radius: 5px;
     margin: 10px 0px;
     cursor: pointer;
+}
+.mobile-button2 {
+  background-color: white;
+  color: #C76159;
+  font-size: 20px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
 }
 
 .mobile-button:disabled {
