@@ -563,7 +563,7 @@ const TeesModal = () => {
                     </div>
                     </div>
                     <br />
-                    <a href="https://paintswap.finance/marketplace/collections/officialnftees-lifestyle-collection" target="_blank" rel="noreferrer">
+                    <a href="https://paintswap.finance/marketplace/fantom/collections/officialnftees" target="_blank" rel="noreferrer">
                     <button className= "button2">Visit collection on PaintSwap</button>
                     </a>
                     <br />
