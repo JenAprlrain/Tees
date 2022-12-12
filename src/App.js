@@ -1019,11 +1019,6 @@ const TeesModal = () => {
             <img src={ultra} alt="" />
           </a>
         </div>
-        <div className="sweater-highlight">
-          <a href="#ultra" onClick={HandleRare}>
-            <img src={HolidaySeason} alt="" />
-          </a>
-        </div>
         <div className="nftees-highlight">
           <a href="#mynftees" onClick={HandleMynftees}>
             <img src={nftees} alt="" />
