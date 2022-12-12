@@ -124,6 +124,18 @@ body {
 .ultra-highlight:hover {
   opacity: 100%;
 }
+.sweater-highlight {
+  width: min-content;
+  opacity: 0;
+  margin-left: 37.8em;
+  margin-top: -4em;
+}
+.sweater-highlight img {
+  width: 8rem;
+}
+.sweater-highlight:hover {
+  opacity: 100%;
+}
 .nftees-highlight {
   width: min-content;
   opacity: 0;
@@ -140,7 +152,7 @@ body {
   width: min-content;
   opacity: 0;
   margin-left: 41.1em;
-  margin-top: -2.7em;
+  margin-top: -3.2em;
 }
 .partners-highlight img {
   width: 13.5rem;
@@ -151,7 +163,7 @@ body {
 .connect-highlight {
   width: min-content;
   margin-left: 22.1em;
-  margin-top: -15.0em;
+  margin-top: -15.2em;
   opacity: 0;
 }
 .connect-highlight img {
