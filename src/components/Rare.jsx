@@ -15,7 +15,7 @@ export default function Rare() {
         <div className="sub-box"> 
         <img src={sweater} alt="Hbar Sweater" width={"100%"} /></div>
         <p className="box-details">
-          Hedera Holiday Sweater is a exclusive collection done in collaboration with Nfteir and Potluck Protocol. Physical sweaters can be claimed only once by an
+          Hedera Holiday Sweater is an exclusive collection done in collaboration with Nfteir and Potluck Protocol. Physical sweaters can be claimed only once by an
           owner of the NFT.
           <br />
           <br />

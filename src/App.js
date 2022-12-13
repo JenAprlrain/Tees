@@ -327,7 +327,7 @@ const TeesModal = () => {
               <br />
               <img src={sweater} alt="Hbar Sweater" width={"50%"}/>
               <br />
-              <div><span className="smalltext">Hedera Holiday Sweater is a exclusive collection done in collaboration with Nfteir and Potluck Protocol. Physical sweaters can be claimed only once by an
+              <div><span className="smalltext">Hedera Holiday Sweater is an exclusive collection done in collaboration with Nfteir and Potluck Protocol. Physical sweaters can be claimed only once by an
               owner of the NFT.</span></div>
               <br />
               <br />
