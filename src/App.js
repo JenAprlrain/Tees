@@ -23,7 +23,6 @@ import tLogo from "./data/t-logo.png";
 import twitter from "./data/twitter.png";
 import twitch from "./data/twitch.png";
 import Collections from "./components/Collections";
-import holiday from "./components/holiday"
 import Ultra from "./components/Ultra";
 import Rare from "./components/Rare";
 import Mynftees from "./components/Nftees";
@@ -63,7 +62,6 @@ import Jmoney from "./data/James.png";
 import z14 from "./data/Zan.png";
 import Jerrod from "./data/Jerrod.png";
 import Jen from "./data/Jen.png"
-import HolidaySeason from "./data/HolidaySeason.png"
 
 
 
@@ -971,7 +969,6 @@ const TeesModal = () => {
       alert('Meta Mask not detected');
     }
   }
-
   // Create a provider to interact with a smart contract
   async function connectWallet() {
     if(typeof window.ethereum !== 'undefined') {
@@ -980,7 +977,6 @@ const TeesModal = () => {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
     }
   }
-
 
   return (
     <div className="parent">
