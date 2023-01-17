@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { ethers } from 'ethers';
+import { useState, useEffect, useMemo } from 'react';
+import { ethers} from 'ethers';
 import "./NftviewApp.css";
 
 function App() {
@@ -7,18 +7,24 @@ function App() {
   const [accountAddress, setAccountAddress] = useState('');
   const [accountBalance, setAccountBalance] = useState('');
   const [isConnected, setIsConnected] = useState(false);
-  const [balance, setBalance] = useState('');
-  const [ownedNFTs, setOwnedNFTs] = useState([]);
-  const [imageURLs, setImageURLs] = useState([]);
-  const [names, setNames] = useState([]);
+  const [communiTeesOwnedNFTs, setCommuniTeesOwnedNFTs] = useState([]);
+  const [communiTeesImageURLs, setCommuniTeesImageURLs] = useState([]);
+  const [communiTeesNames, setCommuniTeesNames] = useState([]);
+  const [royalTeesOwnedNFTs, setRoyalTeesOwnedNFTs] = useState([]);
+  const [royalTeesImageURLs, setRoyalTeesImageURLs] = useState([]);
+  const [royalTeesNames, setRoyalTeesNames] = useState([]);
+ 
 
 
   const { ethereum } = window;
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
-  const contractAddress = '0x633763D9174d6B772676920b2309b39eE3A92a8a';
-  const contractABI = require('../components/contract ABIs/CommuniTeesABI.json');
+  const provider = useMemo(() => new ethers.providers.Web3Provider(window.ethereum),[]);
+  const communiTeesContractAddress = '0x633763D9174d6B772676920b2309b39eE3A92a8a';
+  const royalTeesContractAddress = '0x903efDA32f6d85ae074c1948C8d6B54F2421949f';
+  const communiTeesContractABI = require('../components/contract ABIs/CommuniTeesABI.json');
+  const royalTeesContractABI = require('../components/contract ABIs/RoyalTeesABI.json');
   
-  const contract = new ethers.Contract(contractAddress, contractABI, provider);
+  const communiTeesContract = useMemo(() => new ethers.Contract(communiTeesContractAddress, communiTeesContractABI, provider), [communiTeesContractAddress, communiTeesContractABI, provider]);
+  const royalTeesContract = useMemo(() => new ethers.Contract(royalTeesContractAddress, royalTeesContractABI, provider), [royalTeesContractAddress, royalTeesContractABI, provider]);
   
   
   useEffect(() => {
@@ -51,74 +57,106 @@ function App() {
   };
 
   useEffect(() => {
-    async function fetchBalance() {
-      const balance = await contract.balanceOf(accountAddress);
-      console.log('balance:', balance);
-      setBalance(balance);
-    }
-    if (accountAddress) {
-      fetchBalance();
-    }
-  }, [accountAddress]);
-
-  useEffect(() => {
-   async function fetchOwnedNFTs() {
-  try {
-    const ownedNFTs = [];
-    let index = 0;
-    let tokenId;
-    let balanceOf;
-    let counter = 0;
-    
-    // Retrieve the balance of the contract
-    balanceOf = await contract.balanceOf(accountAddress);
-    
-    // Use the balance of the contract as the maximum number of iterations
-    const maxIterations = balanceOf.toNumber(); 
-    
-    while (counter < maxIterations) {
+    async function fetchOwnedNFTs() {
+      console.log("fetchOwnedNFTs function is called");
       try {
-        tokenId = await contract.tokenOfOwnerByIndex(accountAddress, index);
-        ownedNFTs.push(tokenId);
-        index++;
-      } catch (error) {
-        console.error(error);
-        break;
-      }
-      counter++;
-    }
-    setOwnedNFTs(ownedNFTs.map(ownedNFT => ownedNFT.toString()));
-    const { imageURLs, names } = await getImageURLs();
-    setImageURLs(imageURLs);
-    setNames(names);
-  } catch (error) {
-    // Handle any other errors
-  }
-}
+        const communiTeesOwnedNFTs = [];
+        const royalTeesOwnedNFTs = [];
+        let index = 0;
+        let royalTeesIndex = 0;
+        let tokenId;
+        let balanceOf;
+        let royalBalanceOf;
+        let counter = 0;
+        let royalTeesCounter = 0;
+  
+        // Retrieve the balance of the CommuniTees contract
+        balanceOf = await communiTeesContract.balanceOf(accountAddress);
+        // Use the balance of the contract as the maximum number of iterations
+        const communiTeesMaxIterations = balanceOf.toNumber();
+        // Get the owned NFTs for the CommuniTees contract
+        while (counter < communiTeesMaxIterations) {
+          try {
+            tokenId = await communiTeesContract.tokenOfOwnerByIndex(accountAddress, index);
+            console.log(tokenId.toString());
+            communiTeesOwnedNFTs.push(tokenId.toString());
+            index++;
+          } catch (error) {
+            console.error(error);
+            break;
+          }
+          counter++;
+        }
+        setCommuniTeesOwnedNFTs(communiTeesOwnedNFTs.map(ownedNFT => ownedNFT.toString()));
+  
+          // Retrieve the balance of the RoyalTees contract
+          royalBalanceOf = await royalTeesContract.balanceOf(accountAddress);
+          // Use the balance of the contract as the maximum number of iterations
+          const royalTeesMaxIterations = royalBalanceOf.toNumber();
+          // Get the owned NFTs for the RoyalTees contract
+          while (royalTeesCounter < royalTeesMaxIterations) {
+            try {
+              tokenId = await royalTeesContract.tokenOfOwnerByIndex(accountAddress, royalTeesIndex);
+              console.log(tokenId.toString());
+              royalTeesOwnedNFTs.push(tokenId.toString());
+              royalTeesIndex++;
+            } catch (error) {
+             console.error(error);
+               break;
+             }
+         royalTeesCounter++;
+        }
+        console.log(royalTeesIndex)
+        console.log(royalTeesOwnedNFTs)
+        setRoyalTeesOwnedNFTs(royalTeesOwnedNFTs.map(royalTeesOwnedNFTs => royalTeesOwnedNFTs.toString()));
 
+      } catch (error) {
+        // Handle any other errors
+      }
+    }
     if (accountAddress) {
       fetchOwnedNFTs();
     }
-  }, [accountAddress, contract]);
+  }, [accountAddress, communiTeesContract, royalTeesContract]);            
   
-  const getImageURLs = async () => {
-    const imageURLs = [];
-    const names = [];
-    for (const tokenId of ownedNFTs) {
-      const tokenURI = await contract.tokenURI(tokenId);
-      const response = await fetch(tokenURI);
-      const tokenData = await response.json();
-      imageURLs.push(tokenData.image);
-      names.push(tokenData.name);
-    }
-    return { imageURLs, names };
-  }
+  useEffect(() => {
+    async function fetchImageURLs() {
+        try {
+          const communiTeesImageURLs = [];
+          const communiTeesNames = [];
+          for (const tokenId of communiTeesOwnedNFTs) {
+            const tokenURI = await communiTeesContract.tokenURI(tokenId);
+            const response = await fetch(tokenURI);
+            const tokenData = await response.json();
+            communiTeesImageURLs.push(tokenData.image);
+            communiTeesNames.push(tokenData.name);
+          }
+          setCommuniTeesImageURLs(communiTeesImageURLs);
+          setCommuniTeesNames(communiTeesNames);
+  
+          const royalTeesImageURLs = [];
+          const royalTeesNames = [];
+          for (const tokenId of royalTeesOwnedNFTs) {
+            const tokenURI = await royalTeesContract.tokenURI(tokenId);
+            const response = await fetch(tokenURI);
+            const tokenData = await response.json();
+            royalTeesImageURLs.push(tokenData.image);
+            royalTeesNames.push(tokenData.name);
+          }
+          setRoyalTeesImageURLs(royalTeesImageURLs);
+          setRoyalTeesNames(royalTeesNames);
+        } catch (error) {
+          // Handle any errors
+        }
+      }
+      if (communiTeesOwnedNFTs.length > 0 || royalTeesOwnedNFTs.length > 0) {
+        fetchImageURLs();
+      }
+  }, [communiTeesOwnedNFTs, royalTeesOwnedNFTs, communiTeesContract, royalTeesContract]);
 
-  function NFTName(props) {
-    return <p>{props.name}</p>
-  }
-  
-  function NFTImage(props) {
+
+
+  function CommuniTeesNFTImage(props) {
     return (
       <div>
         <img src={props.imageURL} alt="NFT" />
@@ -127,54 +165,47 @@ function App() {
     );
   }
   
+  function RoyalTeesNFTImage(props) {
+    return (
+      <div>
+        <img src={props.imageURL} alt="NFT" />
+        <p>{props.name}</p>
+      </div>
+    );
+  }
   
-  
- 
-  return (
-    <div className="App">
-      {haveMetamask ? (
-        <>
-          <div className="top-right-container">
-            <a href="./App" className="close-button">
-              Close
-            </a>
-          </div>
-          <div className="left-container">
-            {isConnected ? (
-              <p className="connected-message">Connected Successfully</p>
-            ) : (
-              <button className="connect-button" onClick={connectWallet}>
-                Open Fantom Wardrobe
-              </button>
-            )}
-            <div className="wallet-card">
-              {isConnected ? (
-                <>
-                  <div className="card-row">
-                    <h3>Wallet Address:</h3>
-                    <p>
-                      {accountAddress.slice(0, 4)}...
-                      {accountAddress.slice(38, 42)}
-                    </p>
-                  </div>
-                  <div className="card-row">
-                    <h3>Wallet Balance:</h3>
-                    <p>$FTM {accountBalance}</p>
-                  </div>
-                </>
-              ) : null}
-            </div>
-          </div>
+
+
+return (
+  <div className="App">
+    {haveMetamask ? (
+      <>
+        <div className="top-right-container">
+          <a href="./App" className="close-button">
+            Close
+          </a>
+        </div>
+        <div className="left-container">
           {isConnected ? (
+            <p className="connected-message">Connected Successfully &nbsp;&nbsp;&nbsp;Wallet Address: &nbsp;{accountAddress.slice(0, 4)}...
+            {accountAddress.slice(38, 42)}</p>
+          ) : (
+            <button className="connect-button" onClick={connectWallet}>
+              Open Fantom Wardrobe
+            </button>
+          )}
+        </div>
+        {isConnected ? (
+          <>
             <div className="nft-container">
-              {ownedNFTs.length > 0 ? (
+              {communiTeesOwnedNFTs.length > 0 ? (
                 <>
                   <h1 className="title">CommuniTees Collection</h1>
                   <div className="nft-cards">
-                    {ownedNFTs.map((nft, i) => (
+                    {communiTeesOwnedNFTs.map((nft, i) => (
                       <div className="nft-card" key={nft}>
-                        <NFTImage imageURL={imageURLs[i]} />
-                        <h4>{names[i]}</h4>
+                        <CommuniTeesNFTImage imageURL={communiTeesImageURLs[i]} />
+                        <h4>{communiTeesNames[i]}</h4>
                       </div>
                     ))}
                   </div>
@@ -183,15 +214,34 @@ function App() {
                 <p>No NFTs owned</p>
               )}
             </div>
-          ) : null}
-        </>
-      ) : (
-        <p>Please Install MetaMask</p>
-      )}
-    </div>
-  );
+            <div className="nft-container">
+              {royalTeesOwnedNFTs.length > 0 ? (
+                <>
+                  <h1 className="title">RoyalTees Collection</h1>
+                  <div className="nft-cards">
+                    {royalTeesOwnedNFTs.map((nft, i) => (
+                      <div className="nft-card" key={nft}>
+                        <RoyalTeesNFTImage imageURL={royalTeesImageURLs[i]} />
+                        <h4>{royalTeesNames[i]}</h4>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <p>No NFTs owned</p>
+              )}
+            </div>
+          </>
+        ) : null}
+      </>
+    ) : (
+      <p>Please Install MetaMask</p>
+    )}
+  </div>
+);
+    }
+
+export default App;
+
+
   
-
-}
-
-    export default App;

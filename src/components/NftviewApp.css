@@ -1,8 +1,10 @@
 .top-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+  overflow: auto;
 }
 
 .center-top {
@@ -16,10 +18,10 @@
   display: flex;
   flex-direction: column;
   align-items: left;
-  width: 50%;
+  width: 100%;
   margin: 1rem;
   padding: 1rem;
-  border-radius: 5px;
+  border-radius: 2px;
   font-family: "Aller Bold Italic";
 }
 
