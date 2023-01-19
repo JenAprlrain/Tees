@@ -222,7 +222,7 @@ return (
                   </div>
                 </>
               ) : (
-                <p>No NFTs owned</p>
+                <p>No Communitees NFTs owned</p>
               )}
             </div>
             <div className="nft-container">
@@ -241,7 +241,7 @@ return (
                   </div>
                 </>
               ) : (
-                <p>No NFTs owned</p>
+                <p>No RoyalTees NFTs owned</p>
               )}
             </div>
           </>
