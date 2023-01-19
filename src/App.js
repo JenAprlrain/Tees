@@ -927,7 +927,7 @@ const TeesModal = () => {
                      <br />
                      <div className="smalltext"> TEES and FantomPunks made one of the 
                      first multi-NFT collaborations on the Fantom blockchain as part of the FantomPunks and Royal 
-                     Tees collections
+                     Tees collections.
                          </div>
                          <br />
                          <a href="https://twitter.com/FantomPunks" target="_blank" rel="noreferrer">

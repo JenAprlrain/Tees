@@ -1,8 +1,11 @@
 import { useState, useEffect, useMemo } from 'react';
 import { ethers} from 'ethers';
 import "./NftviewApp.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-function App() {
+function MyTeesApp() {
   const [haveMetamask, sethaveMetamask] = useState(true);
   const [accountAddress, setAccountAddress] = useState('');
   const [accountBalance, setAccountBalance] = useState('');
@@ -173,8 +176,14 @@ function App() {
       </div>
     );
   }
-  
 
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1
+  };
 
 return (
   <div className="App">
@@ -202,12 +211,14 @@ return (
                 <>
                   <h1 className="title">CommuniTees Collection</h1>
                   <div className="nft-cards">
+                  <Slider {...settings}>
                     {communiTeesOwnedNFTs.map((nft, i) => (
                       <div className="nft-card" key={nft}>
                         <CommuniTeesNFTImage imageURL={communiTeesImageURLs[i]} />
                         <h4>{communiTeesNames[i]}</h4>
                       </div>
                     ))}
+                    </Slider>
                   </div>
                 </>
               ) : (
@@ -219,12 +230,14 @@ return (
                 <>
                   <h1 className="title">RoyalTees Collection</h1>
                   <div className="nft-cards">
+                  <Slider {...settings}>
                     {royalTeesOwnedNFTs.map((nft, i) => (
                       <div className="nft-card" key={nft}>
                         <RoyalTeesNFTImage imageURL={royalTeesImageURLs[i]} />
                         <h4>{royalTeesNames[i]}</h4>
                       </div>
                     ))}
+                    </Slider>
                   </div>
                 </>
               ) : (
@@ -241,7 +254,7 @@ return (
 );
     }
 
-export default App;
+export default MyTeesApp;
 
 
   

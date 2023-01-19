@@ -48,26 +48,38 @@
 }
 
 .nft-cards {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 1rem 0;
+  color: white;
 }
 
 .nft-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 20%;
-  margin: 0 1rem;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: white;
+  position: relative;
+  display: block;
+  width: 25%;
+  height: 250px;
+  background-color: rgba(255, 255, 255, 0.76);
   color: black;
+  font-size: 17px;
   font-family: "Aller Bold Italic";
+  text-align: center;
+  border: 3px solid black;
+  border-radius: 12px;
 }
+
+.nft-card h4 {
+  text-align: center;
+  position: absolute;
+  padding-bottom: 7px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
 .nft-card img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 150px;
 }
 .connected-message {
