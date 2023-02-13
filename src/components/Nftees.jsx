@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { ethers} from 'ethers';
 import "./NftviewApp.css";
 import Slider from "react-slick";
@@ -16,36 +16,25 @@ function MyTeesApp() {
   const [royalTeesOwnedNFTs, setRoyalTeesOwnedNFTs] = useState([]);
   const [royalTeesImageURLs, setRoyalTeesImageURLs] = useState([]);
   const [royalTeesNames, setRoyalTeesNames] = useState([]);
- 
-
 
   const { ethereum } = window;
-  const provider = useMemo(() => new ethers.providers.Web3Provider(window.ethereum),[]);
   const communiTeesContractAddress = '0x633763D9174d6B772676920b2309b39eE3A92a8a';
   const royalTeesContractAddress = '0x903efDA32f6d85ae074c1948C8d6B54F2421949f';
   const communiTeesContractABI = require('../components/contract ABIs/CommuniTeesABI.json');
   const royalTeesContractABI = require('../components/contract ABIs/RoyalTeesABI.json');
   
-  const communiTeesContract = useMemo(() => new ethers.Contract(communiTeesContractAddress, communiTeesContractABI, provider), [communiTeesContractAddress, communiTeesContractABI, provider]);
-  const royalTeesContract = useMemo(() => new ethers.Contract(royalTeesContractAddress, royalTeesContractABI, provider), [royalTeesContractAddress, royalTeesContractABI, provider]);
-  
-  
-  useEffect(() => {
-    const { ethereum } = window;
-    const checkMetamaskAvailability = async () => {
-      if (!ethereum) {
-        sethaveMetamask(false);
-      }
-      sethaveMetamask(true);
-    };
-    checkMetamaskAvailability();
-  }, []);
+  let provider;
+  let communiTeesContract;
+  let royalTeesContract;
 
   const connectWallet = async () => {
     try {
+      const { ethereum } = window;
       if (!ethereum) {
         sethaveMetamask(false);
+        return;
       }
+
       const accounts = await ethereum.request({
         method: 'eth_requestAccounts',
       });
@@ -60,105 +49,123 @@ function MyTeesApp() {
   };
 
   useEffect(() => {
-    async function fetchOwnedNFTs() {
-      console.log("fetchOwnedNFTs function is called");
-      try {
-        const communiTeesOwnedNFTs = [];
-        const royalTeesOwnedNFTs = [];
-        let index = 0;
-        let royalTeesIndex = 0;
-        let tokenId;
-        let balanceOf;
-        let royalBalanceOf;
-        let counter = 0;
-        let royalTeesCounter = 0;
-  
-        // Retrieve the balance of the CommuniTees contract
-        balanceOf = await communiTeesContract.balanceOf(accountAddress);
-        // Use the balance of the contract as the maximum number of iterations
-        const communiTeesMaxIterations = balanceOf.toNumber();
-        // Get the owned NFTs for the CommuniTees contract
-        while (counter < communiTeesMaxIterations) {
-          try {
-            tokenId = await communiTeesContract.tokenOfOwnerByIndex(accountAddress, index);
-            console.log(tokenId.toString());
-            communiTeesOwnedNFTs.push(tokenId.toString());
-            index++;
-          } catch (error) {
-            console.error(error);
-            break;
-          }
-          counter++;
-        }
-        setCommuniTeesOwnedNFTs(communiTeesOwnedNFTs.map(ownedNFT => ownedNFT.toString()));
-  
-          // Retrieve the balance of the RoyalTees contract
-          royalBalanceOf = await royalTeesContract.balanceOf(accountAddress);
-          // Use the balance of the contract as the maximum number of iterations
-          const royalTeesMaxIterations = royalBalanceOf.toNumber();
-          // Get the owned NFTs for the RoyalTees contract
-          while (royalTeesCounter < royalTeesMaxIterations) {
-            try {
-              tokenId = await royalTeesContract.tokenOfOwnerByIndex(accountAddress, royalTeesIndex);
-              console.log(tokenId.toString());
-              royalTeesOwnedNFTs.push(tokenId.toString());
-              royalTeesIndex++;
-            } catch (error) {
-             console.error(error);
-               break;
-             }
-         royalTeesCounter++;
-        }
-        console.log(royalTeesIndex)
-        console.log(royalTeesOwnedNFTs)
-        setRoyalTeesOwnedNFTs(royalTeesOwnedNFTs.map(royalTeesOwnedNFTs => royalTeesOwnedNFTs.toString()));
-
-      } catch (error) {
-        // Handle any other errors
-      }
+    if (!window.ethereum) {
+      sethaveMetamask(false);
+      return;
     }
-    if (accountAddress) {
+    provider = new ethers.providers.Web3Provider(window.ethereum);
+    communiTeesContract = new ethers.Contract(communiTeesContractAddress, communiTeesContractABI, provider);
+    royalTeesContract =  new ethers.Contract(royalTeesContractAddress, royalTeesContractABI, provider);
+  }, []);
+
+  useEffect(() => {
+    if (isConnected && accountAddress) {
       fetchOwnedNFTs();
     }
-  }, [accountAddress, communiTeesContract, royalTeesContract]);            
-  
+  }, [isConnected, accountAddress]);
+
   useEffect(() => {
-    async function fetchImageURLs() {
-        try {
-          const communiTeesImageURLs = [];
-          const communiTeesNames = [];
-          for (const tokenId of communiTeesOwnedNFTs) {
-            const tokenURI = await communiTeesContract.tokenURI(tokenId);
-            const response = await fetch(tokenURI);
-            const tokenData = await response.json();
-            communiTeesImageURLs.push(tokenData.image);
-            communiTeesNames.push(tokenData.name);
-          }
-          setCommuniTeesImageURLs(communiTeesImageURLs);
-          setCommuniTeesNames(communiTeesNames);
+    if (communiTeesOwnedNFTs.length > 0 || royalTeesOwnedNFTs.length > 0) {
+      fetchImageURLs();
+    }
+  }, [communiTeesOwnedNFTs, royalTeesOwnedNFTs]);
   
-          const royalTeesImageURLs = [];
-          const royalTeesNames = [];
-          for (const tokenId of royalTeesOwnedNFTs) {
-            const tokenURI = await royalTeesContract.tokenURI(tokenId);
-            const response = await fetch(tokenURI);
-            const tokenData = await response.json();
-            royalTeesImageURLs.push(tokenData.image);
-            royalTeesNames.push(tokenData.name);
-          }
-          setRoyalTeesImageURLs(royalTeesImageURLs);
-          setRoyalTeesNames(royalTeesNames);
+  async function fetchOwnedNFTs() {
+    console.log("fetchOwnedNFTs function is called");
+    try {
+      if (!window.ethereum) {
+        sethaveMetamask(false);
+      }
+  
+      let index = 0;
+      let royalTeesIndex = 0;
+      let tokenId;
+      let balanceOf;
+      let royalBalanceOf;
+  
+      // Retrieve the balance of the CommuniTees contract
+      balanceOf = await communiTeesContract.balanceOf(accountAddress);
+      // Use the balance of the contract as the maximum number of iterations
+      const communiTeesMaxIterations = balanceOf.toNumber();
+      // Get the owned NFTs for the CommuniTees contract
+      console.log(communiTeesMaxIterations);
+  
+      const communiTeesOwnedNFTs = [];
+  
+      for (let index = 0; index < balanceOf; index++) {
+        try {
+          tokenId = await communiTeesContract.tokenOfOwnerByIndex(accountAddress, index);
+          console.log(tokenId.toString());
+          communiTeesOwnedNFTs.push(tokenId.toString());
         } catch (error) {
-          // Handle any errors
+          console.error(error);
+          break;
         }
       }
-      if (communiTeesOwnedNFTs.length > 0 || royalTeesOwnedNFTs.length > 0) {
-        fetchImageURLs();
+  
+      setCommuniTeesOwnedNFTs(communiTeesOwnedNFTs.map(ownedNFT => ownedNFT.toString()));
+  
+      // Retrieve the balance of the RoyalTees contract
+      royalBalanceOf = await royalTeesContract.balanceOf(accountAddress);
+      // Use the balance of the contract as the maximum number of iterations
+      const royalTeesMaxIterations = royalBalanceOf.toNumber();
+      // Get the owned NFTs for the RoyalTees contract
+  
+      const royalTeesOwnedNFTs = [];
+  
+      for (let royalTeesIndex = 0; royalTeesIndex < royalTeesMaxIterations; royalTeesIndex++) {
+        try {
+          tokenId = await royalTeesContract.tokenOfOwnerByIndex(accountAddress, royalTeesIndex);
+          console.log(tokenId.toString());
+          royalTeesOwnedNFTs.push(tokenId.toString());
+        } catch (error) {
+          console.error(error);
+          break;
+        }
       }
-  }, [communiTeesOwnedNFTs, royalTeesOwnedNFTs, communiTeesContract, royalTeesContract]);
-
-
-
+      console.log(royalTeesIndex)
+      console.log(royalTeesOwnedNFTs)
+      setRoyalTeesOwnedNFTs(royalTeesOwnedNFTs.map(royalTeesOwnedNFTs => royalTeesOwnedNFTs.toString()));
+  
+    } catch (error) {
+      // Handle any other errors
+    }
+  }
+  
+  async function fetchImageURLs() {
+    try {
+      if (!window.ethereum) {
+        sethaveMetamask(false);
+      }
+  
+      const communiTeesImageURLs = [];
+      const communiTeesNames = [];
+      for (const tokenId of communiTeesOwnedNFTs) {
+        const tokenURI = await communiTeesContract.tokenURI(tokenId);
+        const response = await fetch(tokenURI);
+        const tokenData = await response.json();
+        communiTeesImageURLs.push(tokenData.image);
+        communiTeesNames.push(tokenData.name);
+      }
+      setCommuniTeesImageURLs(communiTeesImageURLs);
+      setCommuniTeesNames(communiTeesNames);
+  
+      const royalTeesImageURLs = [];
+      const royalTeesNames = [];
+      for (const tokenId of royalTeesOwnedNFTs) {
+        const tokenURI = await royalTeesContract.tokenURI(tokenId);
+        const response = await fetch(tokenURI);
+        const tokenData = await response.json();
+        royalTeesImageURLs.push(tokenData.image);
+        royalTeesNames.push(tokenData.name);
+      }
+      setRoyalTeesImageURLs(royalTeesImageURLs);
+      setRoyalTeesNames(royalTeesNames);
+    } catch (error) {
+      // Handle any errors
+    }
+  }  
+     
   function CommuniTeesNFTImage(props) {
     return (
       <div>
