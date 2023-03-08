@@ -6,7 +6,7 @@ export default function Ultra() {
     
     <div className="min-content ultra-exclusive">
        <div>
-      <a href="./App">
+      <a href="./">
       <button className="closebutton">x Close</button>
       </a>
       </div>

@@ -77,7 +77,7 @@ body {
   opacity: 100%;
 }
 .team-highlight {
-  margin-top: -3.3em;
+  margin-top: -3.0em;
   margin-left: 19.1em;
   opacity: 0;
   width: min-content;
@@ -89,7 +89,7 @@ body {
   opacity: 100%;
 }
 .tees-highlight {
-  margin-top: -2.5em;
+  margin-top: -2.1em;
   margin-left: 25.22em;
   opacity: 0;
   width: min-content;
@@ -103,7 +103,7 @@ body {
 .rare-highlight {
   width: min-content;
   margin-left: 32.1em;
-  margin-top: 8.2em;
+  margin-top: 8.4em;
   opacity: 0;
 }
 .rare-highlight img {
@@ -116,7 +116,7 @@ body {
   width: min-content;
   opacity: 0;
   margin-left: 23.1em;
-  margin-top: -2em;
+  margin-top: -1.8em;
 }
 .ultra-highlight img {
   width: 7rem;
@@ -128,7 +128,7 @@ body {
   width: min-content;
   opacity: 0;
   margin-left: 36.5em;
-  margin-top: -18em;
+  margin-top: -17.5em;
 }
 .nftees-highlight img {
   width: 2.6rem;
@@ -140,7 +140,7 @@ body {
   width: min-content;
   opacity: 0;
   margin-left: 41.1em;
-  margin-top: -2.7em;
+  margin-top: -2.5em;
 }
 .partners-highlight img {
   width: 13.5rem;
@@ -175,7 +175,7 @@ body {
 .twitter-highlight {
   width: min-content;
   margin-left: 52.3em;
-  margin-top: -2.1em;
+  margin-top: -1.8em;
   opacity: 0;
 }
 .twitter-highlight img {
@@ -187,7 +187,7 @@ body {
 .twitch-highlight {
   width: min-content;
   margin-left: 54.2em;
-  margin-top: -2.8em;
+  margin-top: -2.5em;
   opacity: 0;
 }
 .twitch-highlight img {
@@ -198,7 +198,7 @@ body {
 }
 .t-highlight {
   width: min-content;
-  margin-top: -3.8em;
+  margin-top: -3.5em;
   margin-left: 3.9em;
   opacity: 0;
 }
@@ -469,10 +469,6 @@ body {
 #menu-page,
 #uman-page {
   display: none;
-}
-
-.mobilemain {
-
 }
 
 .mobilewrapper{

@@ -145,7 +145,7 @@ export default function Menu() {
     <div className="min-content partners-list">
     {WhatIsTeesModal()}
       <div>
-      <a href="./App">
+      <a href="./">
       <button className="closebutton">x Close</button>
       </a>
       </div>

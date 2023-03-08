@@ -11,7 +11,7 @@ export default function Team() {
     <div className="teams">
         <div className="teams__fashionHead-section">
         <div>
-      <a href="./App">
+      <a href="./">
       <button className="closebutton">x Close</button>
       </a>
       </div>

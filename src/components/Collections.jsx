@@ -155,7 +155,7 @@ export default function Collections() {
   return (
     <div className="min-content partners-list">
       <div>
-      <a href="./App">
+      <a href="./">
       <button className="closebutton">x Close</button>
       </a>
       </div>
